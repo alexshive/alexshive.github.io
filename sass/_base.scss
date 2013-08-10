@@ -1,0 +1,115 @@
+@import "font-awesome/font-awesome";
+
+@import "foundation/components/global"; // *always required
+@import "foundation/components/grid";
+@import "foundation/components/visibility";
+
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+@import "compass/css3/box-shadow";
+
+$icon-color: #eee;
+$text-color: #333;
+$icon-background: rgba(0,0,0,.1);
+
+$icon-size: 180px;
+
+html, body {
+    background: $background;
+    height: 100%;
+    main {
+        height: 100%;
+    }
+}
+
+h1 {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    margin: 0;
+    font-size: 3em;
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    bottom: $icon-size/2;
+    left: 0px;
+    width: 100%;
+    span {
+        @include grid-column(4);
+    }
+    a {
+        position: relative;
+        width: $icon-size;
+        height: $icon-size;
+        display: block;
+        color: $icon-color;
+        text-decoration: none;
+        margin: 0 auto;
+        i {
+            font-size: 7em;
+            position: relative;
+            top: 35px;
+            left: 37px;
+        }
+        div.info-wrap,
+        div.info {
+            position: absolute;
+            width: $icon-size;
+            height: $icon-size;
+            @include border-radius(50%);
+            @include transition(all 0.4s ease-in-out);            
+            @include perspective(800px);
+        }
+        div.info-wrap {
+            background: #ccc;
+            @include box-shadow(inset 0 0 15px rgba(0,0,0,.5));
+            div.info {
+                @include transform-style(preserve-3d);
+                &> div {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    @include border-radius(50%);
+                    @include transition(all 0.3s ease-in-out);
+                }
+                &>div.description {
+                    padding: 40px;
+                    color: $text-color;
+                    @include border-radius(50%);
+                    overflow: hidden;
+                }
+                div.cover {
+                    background: #333;
+                    z-index: 100;
+                    @include transform-origin(100% 50% 0 true);
+                }
+            }
+            &:hover {
+                background: #eee;
+                div.info div.cover {
+                    @include transform(rotate(180deg));
+                }
+            }
+        }
+    }
+    p {
+        display: inline;
+        font-size: 1.5em;
+        padding: 15px 30px;
+        position: absolute;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
