@@ -4,9 +4,9 @@
 @import "foundation/components/grid";
 @import "foundation/components/visibility";
 
-@import "compass/css3/transition";
-@import "compass/css3/transform";
-@import "compass/css3/box-shadow";
+@import "compass/css3";
+
+@import "shade";
 
 $icon-color: #eee;
 $text-color: #333;
@@ -29,6 +29,7 @@ h1 {
     margin: 0;
     font-size: 3em;
     text-align: center;
+    @include shade(#2b3c4e, $angle: 156deg);
 }
 
 nav {
