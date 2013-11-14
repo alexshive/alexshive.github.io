@@ -11,97 +11,89 @@
 <body>
 
 	<header>
-		<h1>Alex Shive</h1>
-
-		<nav>
-			<ul>
-				<li><a href="#">About myself</a></li>
-				<li><a href="#">Work I've done</a></li>
-			</ul>
-		</nav>
+		<hgroup>
+			<h1>Alex Shive</h1>
+			<h2>Web developer and lover of coffee.</h2>
+			<div class="headshot"><img src="img/girl.png" /></div>
+	
+			<nav>
+				<ul>
+					<li><a href="#" rel="about" class="active">About</a></li>
+					<li><a href="#" rel="portfolio">Work</a></li>
+					<li><a href="#" rel="contact">Contact</a></li>
+				</ul>
+			</nav>
+		</hgroup>
 
 	</header>
 
 	<main>
 		
-		<h1>Featured project</h1>
-		
-		
-		
-		<!-- Services -->
-		<section id="about" class="hidden panel">
-			<h2>What I can do</h2>
-			<p>An overview of the skills I have aquired over the years.</p>
-			<h3>Web Development</h3>
-			<h4>Front-end</h4>
-			<ul>
-				<li>
-					<h5>Core:</h5>
-					<ul>
-						<li>HTML 5</li>
-						<li>CSS/SCSS</li>
-						<li>Javascript</li>
-					</ul>
-				<li>
-					<h5>Frameworks:</h5>
-					<ul>
-						<li>jQuery</li>
-						<li>Bootstrap</li>
-					</ul>
-				</li>
-			</ul>
-			<h4>Back-end</h4>
-			<ul>
-				<li>
-					<h5>Core:</h5>
-					<ul>
-						<li>PHP</li>
-						<li>MySQL</li>
-						<li>MongoDB</li>
-						<li>Git</li>
-					</ul>
-				</li>
-				<li>
-					<h5>Frameworks: </h5>
-					<ul>
-						<li>Wordpress</li>
-					</ul>
-				</li>
-			</ul>
-			<h4>Mobile</h4>
-			<ul>
-				<li>iPhone 4/5, iOS 4.3+</li>
-				<li>Android</li>
-			</ul>
-		</section>
-
 		<!-- Portfolio -->
-		<section id="work" class="hidden panel">
-			<h2>About Me</h2>
-
+		<section id="portfolio" class="hidden panel">
 			<h3>Work I've done</h3>
 			<p>Personal projects that have helped expand my knowledge of coding, content, and design.</p>
-		
-				<div id="project">
-					
+				<div id="projects">
+					<ul>
+						<li><h4>JustJennette</h4></li>
+						<li><h4>JennetteMcCurdy.com</h4></li>
+						<li><h4>WPGhost</h4></li>
+						<li><h4>EIG Pattern Library</h4></li>
+
+					</ul>
 				</div>
+		</section>
+		
+		<!-- About -->
+		<section id="about" class="panel">
+			<h3>Hi there!</h3>
+			<p>I'm a bay area resident, a recent graduate from Cal State East Bay, and a forward thinker. I've currently accumilated over 12 years of experience as a front end developer, graphic designer, and engineer. I've enjoyed every moment of it and waking up to new possibilities. I enjoy a challenge and am always up to the task of problem solving as the web evolves. I strive to learn new web technology as it continuously evolves. </p>
+			<h3>What can I do for you:</h3>
+			<div class="skill">
+				<h4>Front end development</h4>
 				<ul>
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
+					<li>HTML 5</li>
+					<li>CSS 3 & SCSS</li>
+					<li>Javascript & jQuery</li>
+					<li>Adobe Photoshop CS5</li>
+					<li>Grunt</li>
+					<li>RequireJS</li>
+					<li>Bootstrap & Foundation</li>
 				</ul>
+			</div>
+			<div class="skill">
+				<h4>Back end programming</h4>
+				<ul>
+					<li>PHP</li>
+					<li>MySQL</li>
+					<li>mongoDB</li>
+					<li>Git</li>
+					<li>Wordpress/Ghost</li>
+				</ul>
+			</div>
+			<div class="skill">
+				<h4>Additional experience</h4>
+				<ul>
+					<li>Responsive design</li>
+					<li>API development with JSON output</li>
+					<li>Titanium SDK</li>
+					<li>iOS App development</li>
+					<li>Android App development</li>
+					<li>Worked with Instagram, Vine, Tumblr, and Youtube APIs</li>
+				</ul>
+			</div>
+			<h3>Looking for something specific?</h3>
+			<p>I'm always interested in various web technologies and can help you with the specifics. Feel free to <a href="#" class="jump" rel="contact">send me a quick message.</a></p>
 		</section>
 		
 		<!-- Contact -->
 		<section id="contact" class="hidden panel">
+			<h3>Let's keep in touch</h3>
 			<form method="POST">
-				<label for="contact-name">Name</label>
+				<label for="contact-name">Your Name</label>
 				<input type="text" id="contact-name" name="contact[name]" value="" />
 				
-				<label for="contact-email">E-mail</label>
+				<label for="contact-email">E-mail Address</label>
 				<input type="text" id="contact-email" name="contact[email]" value="" />
 					
 				<label for="contact-message">Message</label>
@@ -110,45 +102,15 @@
 				<input type="submit" value="Send Message" />
 			</form>
 		</section>
-		
-		<nav>
-			<span>
-				<a href="http://twitter.com/alexshive">
-					<div class="info-wrap">
-						<div class="info">
-							<div class="cover"><i class="icon-twitter"></i></div>
-							<div class="description">Current and random thoughts.</div>
-						</div>
-					</div>
-				</a>
-			</span>
-			<span>
-				<a href="http://github.com/alexshive">
-					<div class="info-wrap">
-						<div class="info">
-							<div class="cover"><i class="icon-github-alt"></i></div>
-							<div class="description">Coding playground and project progression.</div>
-						</div>
-					</div>
-				</a>
-			</span>
-			<span>
-				<a href="#">
-					<div class="info-wrap">
-						<div class="info">
-							<div class="cover"><i class="icon-envelope"></i></div>
-							<div class="description">Stay in touch! Let's grab a cup of coffee.</div>
-						</div>
-					</div>
-				</a>
-			</span>
-		</nav>
-		
+	
 	</main>
 	
 	<footer>
 		<p>&copy; 2001 - 2013</p>
 	</footer>
+
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/script.js"></script>
 
 </body>
 </html>
