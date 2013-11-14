@@ -1403,9 +1403,26 @@ footer p {
 
   /* line 55, ../sass/_desktop.scss */
   main {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 1140px;
+    zoom: 1;
     padding-top: 25px;
   }
-  /* line 57, ../sass/_desktop.scss */
+  /* line 3, ../sass/_grid.scss */
+  main:before, main:after {
+    content: "";
+    display: table;
+  }
+  /* line 4, ../sass/_grid.scss */
+  main:after {
+    clear: both;
+  }
+  /* line 59, ../sass/_desktop.scss */
   main div.skill {
     position: relative;
     float: left;
@@ -1413,7 +1430,7 @@ footer p {
     padding-left: 5px;
     padding-right: 5px;
   }
-  /* line 60, ../sass/_desktop.scss */
+  /* line 62, ../sass/_desktop.scss */
   main section.panel {
     position: absolute;
     width: 100%;
@@ -1423,7 +1440,7 @@ footer p {
     transition: all 0.3s ease;
   }
 
-  /* line 67, ../sass/_desktop.scss */
+  /* line 69, ../sass/_desktop.scss */
   footer {
     position: fixed;
   }
