@@ -18,8 +18,8 @@
 	
 			<nav>
 				<ul>
-					<li><a href="#" rel="about" class="active">About</a></li>
-					<li><a href="#" rel="portfolio">Work</a></li>
+					<li><a href="#" rel="about" class="">About</a></li>
+					<li><a href="#" rel="portfolio" class="active">Work</a></li>
 					<li><a href="#" rel="contact">Contact</a></li>
 				</ul>
 			</nav>
@@ -30,22 +30,69 @@
 	<main>
 		<div class="wrapper">
 		<!-- Portfolio -->
-		<section id="portfolio" class="hidden panel">
+		<section id="portfolio" class="panel">
 			<h3>Work I've done</h3>
-			<p>Personal projects that have helped expand my knowledge of coding, content, and design.</p>
 				<div id="projects">
 					<ul>
-						<li><h4>JustJennette</h4></li>
-						<li><h4>JennetteMcCurdy.com</h4></li>
-						<li><h4>WPGhost</h4></li>
-						<li><h4>EIG Pattern Library</h4></li>
+						<li>
+							<div class="details">
+								<h4>JustJennette</h4>
+
+								<p>JustJennette is a fansite dedicated to the Nickelodeon celebrity actress Jennette McCurdy. Since it's debut in June 2010, JustJennette has been the most successful personal project to date. Under the hood, the custom layout was built for the <em>Wordpress framework</em> and optimized for <em>responsive design</em> with the aim of designing for mobile first. It is also utilizing Grunt for minification of <em>object oriented Javascript/jQuery</em> and <em>SCSS compiling</em>. </p>
+
+								<p>In addition to the website, there is a custom made <em>iOS and Android app</em>, named <strong>Jennapp</strong>. It's  available now for both iPhone and Android devices.</p>
+
+								<p><a href="http://justjennette.com" target="_blank">View JustJennette.com</a></p>
+							</div>
+							
+							<div class="screenshots">
+								<img src="work/justjennette-desktop.jpg" class="show" />
+								<img src="work/justjennette-tablet.jpg" />
+								<img src="work/justjennette-app.jpg" />
+							</div>
+
+						</li>
+						<li>
+							<div class="details">
+								<h4>JennetteMcCurdy.com</h4>
+
+								<p>Concept web design along with a custom made logo. Utilizes full page sliding effects and transitions with <em>CSS3</em> and integration with a <em>custom JSON API</em> from JustJennette for news source. The backend is hosted with <a href="https://www.appfog.com/" target="_blank">AppFog</a> using terminal commands and Git repositories. </p>
+
+								<p><a href="http://jennettemccurdy-v2.aws.af.cm/" target="_blank">View the JennetteMcCurdy.com prototype</a></p>
+							</div>
+
+							<div class="screenshots">
+								<img src="work/jennettemccurdy-desktop.jpg" class="show" />
+							</div>
+
+						</li>
+						<li>
+							<div class="details">
+								<h4>WPGhost</h4>
+								<p><a href="http://tryghost.org" target="_blank">Ghost</a> has been widely spread as a solution to simple blogging, with Wordpress being viewed as a CMS (Content Management System). </p>
+
+								<p>During its early phase of being hidden from the public, I tried to re-create the front-end experience. Instead of using NodeJS for the backend, I recreated using Wordpress. It was a fun learning experience in Javascript navigation and helped me expand my knowledge of Markdown. </p>
+
+								<p><a href="https://github.com/alexshive/wpghost" target="_blank">View the WPGhost repository</a></p>
+							</div>
+							
+							<div class="screenshots">
+								<img src="work/wpghost-desktop.jpg" class="show" />
+							</div>
+
+						</li>
+						<li>
+							<h4>EIG Pattern Library</h4>
+							<p>It's become standard practice for large companies to adapt a pattern library to avoid confusion between designers and developers. It helps simplify the process, avoid repeating styles, and prevent bad coding practices.</p>
+
+						</li>
 
 					</ul>
 				</div>
 		</section>
 		
 		<!-- About -->
-		<section id="about" class="panel">
+		<section id="about" class="hidden panel">
 			<h3>Hi there!</h3>
 			<p>I'm a bay area resident, a recent graduate from Cal State East Bay, and a forward thinker. I've currently accumilated over 12 years of experience as a front end developer, graphic designer, and engineer. I've enjoyed every moment of it and waking up to new possibilities. I enjoy a challenge and am always up to the task of problem solving as the web evolves. I strive to learn new web technology as it continuously evolves. </p>
 			<h3>What can I do for you:</h3>

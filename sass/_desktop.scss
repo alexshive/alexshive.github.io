@@ -64,6 +64,24 @@
 			width: 100%;
 			@include transition(all .3s ease);
 		}
+		#projects ul li {
+			.details {
+				@include col(5);
+			}
+			.screenshots {
+				@include col(7);
+				img {
+					display: none;
+					position: absolute;
+					z-index: 2;
+					&.show {
+						display: block;
+						position: relative;
+						z-index: 1;
+					}
+				}
+			}
+		}
 	}
 
 	footer {

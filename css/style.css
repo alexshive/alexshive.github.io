@@ -934,11 +934,11 @@ LINK STYLES
 /* line 21, ../sass/_base.scss */
 a {
   text-decoration: none;
-  color: red;
+  color: #349adf;
 }
 /* line 26, ../sass/_base.scss */
 a:hover {
-  color: red;
+  color: #349adf;
 }
 /* line 30, ../sass/_base.scss */
 a:link {
@@ -1043,14 +1043,14 @@ header:after, footer:after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #4c4c4c;
+  background-color: #414141;
   *zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4C4C4C', endColorstr='#FF131313');
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4c4c4c), color-stop(100%, #131313));
-  background-image: -webkit-linear-gradient(top, #4c4c4c 0%, #131313 100%);
-  background-image: -moz-linear-gradient(top, #4c4c4c 0%, #131313 100%);
-  background-image: -o-linear-gradient(top, #4c4c4c 0%, #131313 100%);
-  background-image: linear-gradient(top, #4c4c4c 0%, #131313 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF414141', endColorstr='#FF000000');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #414141), color-stop(100%, #000000));
+  background-image: -webkit-linear-gradient(top, #414141 0%, #000000 100%);
+  background-image: -moz-linear-gradient(top, #414141 0%, #000000 100%);
+  background-image: -o-linear-gradient(top, #414141 0%, #000000 100%);
+  background-image: linear-gradient(top, #414141 0%, #000000 100%);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=35);
   opacity: 0.35;
   z-index: 0;
@@ -1296,7 +1296,7 @@ main:after {
 }
 /* line 240, ../sass/_base.scss */
 main a {
-  border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(52, 154, 223, 0.2);
 }
 /* line 243, ../sass/_base.scss */
 main section {
@@ -1304,11 +1304,30 @@ main section {
   padding: 0px 25px;
 }
 /* line 247, ../sass/_base.scss */
+main #projects ul {
+  padding: 0;
+  margin: 0;
+}
+/* line 249, ../sass/_base.scss */
 main #projects ul li {
   list-style: none;
+  text-align: center;
+}
+/* line 252, ../sass/_base.scss */
+main #projects ul li h4, main #projects ul li p {
+  text-align: left;
+}
+/* line 255, ../sass/_base.scss */
+main #projects ul li img {
+  width: 100%;
+}
+/* line 260, ../sass/_base.scss */
+main label, main input[type=submit] {
+  display: block;
+  margin-top: 15px;
 }
 
-/* line 252, ../sass/_base.scss */
+/* line 266, ../sass/_base.scss */
 footer {
   position: relative;
   height: 45px;
@@ -1316,7 +1335,7 @@ footer {
   left: 0;
   width: 100%;
 }
-/* line 258, ../sass/_base.scss */
+/* line 272, ../sass/_base.scss */
 footer p {
   float: left;
   width: 100%;
@@ -1398,7 +1417,7 @@ footer p {
   }
   /* line 48, ../sass/_desktop.scss */
   nav ul li a.active {
-    border-color: rgba(255, 0, 0, 0.6);
+    border-color: rgba(52, 154, 223, 0.6);
   }
 
   /* line 55, ../sass/_desktop.scss */
@@ -1439,8 +1458,36 @@ footer p {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
+  /* line 68, ../sass/_desktop.scss */
+  main #projects ul li .details {
+    position: relative;
+    float: left;
+    width: 41.66667%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  /* line 71, ../sass/_desktop.scss */
+  main #projects ul li .screenshots {
+    position: relative;
+    float: left;
+    width: 58.33333%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  /* line 73, ../sass/_desktop.scss */
+  main #projects ul li .screenshots img {
+    display: none;
+    position: absolute;
+    z-index: 2;
+  }
+  /* line 77, ../sass/_desktop.scss */
+  main #projects ul li .screenshots img.show {
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
 
-  /* line 69, ../sass/_desktop.scss */
+  /* line 87, ../sass/_desktop.scss */
   footer {
     position: fixed;
   }

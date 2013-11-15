@@ -105,9 +105,9 @@ header, footer {
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: #4c4c4c;
-		@include filter-gradient(#4c4c4c, #131313, vertical);
-		@include background-image(linear-gradient(top,  #4c4c4c 0%,#131313 100%));
+		background-color: $header-gradient-top;
+		@include filter-gradient($header-gradient-top,  $header-gradient-bottom, vertical);
+		@include background-image(linear-gradient(top,  $header-gradient-top 0%, $header-gradient-bottom 100%));
 		@include opacity(.35);
 		z-index: 0;
 	}
@@ -244,8 +244,22 @@ main {
 		position: relative;
 		padding: 0px 25px;
 	}
-	#projects ul li {
-		list-style: none;
+	#projects ul {
+		@include no-padding;
+		li {
+			list-style: none;
+			text-align: center;
+			h4, p {
+				text-align: left;
+			}
+			img {
+				width: 100%;
+			}
+		}
+	}
+	label, input[type=submit] {
+		display: block;
+		margin-top: 15px;
 	}
 }
 

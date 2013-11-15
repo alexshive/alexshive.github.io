@@ -6,9 +6,13 @@ var A = {
 	nav: {
 		init: function() {
 			$panels = $('section.panel');
+			$nav = $('nav a');
 			$('nav a, .jump').click(function(e) {
+				$this = $(this);
+				$nav.removeClass('active');
 				$panels.addClass('hidden');
-				$('#' + $(this).attr('rel')).removeClass('hidden');
+				$this.addClass('active');
+				$('#' + $this.attr('rel')).removeClass('hidden');
 				e.preventDefault();
 			});
 		}
