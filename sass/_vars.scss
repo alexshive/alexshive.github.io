@@ -1,73 +1,56 @@
-/*------------------------------------*\
-    VARS.SCSS
-\*------------------------------------*/
-/**
- * Any variables you find set in inuit.css’ `_vars.scss` that you do not wish to
- * keep, simply redefine here. This means that if inuit.css, for example, sets
- * your `$base-font-size` at 16px and you wish it to be 14px, simply redeclare
- * that variable in this file. inuit.css ignores its own variables in favour of
- * using your own, so you can completely modify how inuit.css works without ever
- * having to alter the framework itself.
- */
 
+$body-bg-color: #f1f1f1;
 
+$font-color: darken($body-bg-color, 80%);
+$nav-link-color: darken($body-bg-color, 20%);
+$nav-link-hover: lighten($nav-link-color, 20%);
 
+$link-color: #f00;
+$link-hover: $link-color;
 
+$padding: 25px;
 
-/*------------------------------------*\
-    $OBJECTS-AND-ABSTRACTIONS
-\*------------------------------------*/
-/**
- * All of inuit.css’ objects and abstractions are initially turned off by
- * default. This means that you start any project with as little as possible,
- * and introducing objects and abstractions is as simple as switching the
- * following variables to `true`.
- */
-$use-grids:         true;
-$use-flexbox:       false;
-$use-columns:       false;
-$use-nav:           false;
-$use-options:       false;
-$use-pagination:    false;
-$use-breadcrumb:    false;
-$use-media:         false;
-$use-marginalia:    false;
-$use-island:        false;
-$use-block-list:    false;
-$use-matrix:        false;
-$use-split:         false;
-$use-this-or-this:  false;
-$use-link-complex:  false;
-$use-flyout:        false;
-$use-arrows:        false;
-$use-sprite:        false;
-$use-icon-text:     false;
-$use-beautons:      false;
-$use-lozenges:      false;
-$use-rules:         false;
-$use-stats:         false;
-$use-greybox:       false;
+/*********************
+BASE SIZE
+*********************/
 
+$base-font-size: 18;
 
+/*********************
+TYPOGRAPHY
+*********************/
 
+$sans-serif:        "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 
+$body-font-family: $sans-serif;
+$body-font-weight: 300;
 
-/*------------------------------------*\
-    $OVERRIDES
-\*------------------------------------*/
-/**
- * Place any variables that should override inuit.css’ defaults here.
- */
+$line-height: ($base-font-size + ($base-font-size / 2)) + px;
 
+$footer-font-family: $sans-serif;
+$footer-line-height: ($base-font-size) + px;
 
+$nav-font-family: $sans-serif;
 
+$h1-font-size: $base-font-size * 3;
+$h1-font-family: $sans-serif;
 
+$h2-font-size: $base-font-size * 1.2;
+$h2-font-family: $h1-font-family;
 
-/*------------------------------------*\
-    $CUSTOM
-\*------------------------------------*/
-/**
- * Place any of your own variables that sit on top of inuit.css here.
- */
+$h3-font-size: $base-font-size * 2;
+$h3-font-family: $h1-font-family;
 
-$background: #dedede;
+$h4-font-size: $base-font-size * 1.05;
+
+/*********************
+BUTTONS
+*********************/
+
+$btn-bg-color: #000;
+$btn-text-color: #eee;
+
+$btn-bg-hover: #333;
+$btn-text-hover: #fff;
+

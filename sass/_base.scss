@@ -1,116 +1,273 @@
-@import "font-awesome/font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700);
 
-@import "foundation/components/global"; // *always required
-@import "foundation/components/grid";
-@import "foundation/components/visibility";
-
-@import "compass/css3";
-
-@import "shade";
-
-$icon-color: #eee;
-$text-color: #333;
-$icon-background: rgba(0,0,0,.1);
-
-$icon-size: 180px;
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+}
 
 html, body {
-    background: $background;
-    height: 100%;
-    main {
-        height: 100%;
-    }
+	background-color: $body-bg-color;
+	color: $font-color;
+	font-family: $body-font-family;
+	font-size: $base-font-size + px;
+	font-weight: $body-font-weight;
+}
+
+/*********************
+LINK STYLES
+*********************/
+
+a {
+	
+	text-decoration: none;
+	color: $link-color;
+
+	&:hover {
+		color: $link-hover;
+	}
+
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+// disable double-tap-to-zoom on certain elements
+
+a, input, button {
+    -ms-touch-action: none !important;
+    @include transition(all .3s ease);
+}
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, h2, h3, h4, h5 {
+	font-family: $sans-serif;
+	text-rendering: optimizelegibility;
+	font-weight: 300;
+	display: block;
+	@include clear;
+	/*
+	if you're going to use webfonts, be sure to check your weights
+	http://css-tricks.com/watch-your-font-weight/
+	*/
+
+	/* removing text decoration from all headline links */
+	a {
+		text-decoration: none;
+	}
 }
 
 h1 {
-    width: 100%;
-    position: absolute;
-    top: 40%;
-    margin: 0;
-    font-size: 3em;
-    text-align: center;
-    @include shade(#2b3c4e, $angle: 156deg);
+	font-family: $h1-font-family;
+	letter-spacing: -1px;
+	@include rem($h1-font-size);
+	line-height: 1;
+	padding: 0px $padding/2;
+	text-align: left;
+	color: darken($body-bg-color, 60%);
+}
+
+h2 {
+	font-family: $h2-font-family;
+	@include rem($h2-font-size);
+	text-align: center;
+}
+
+h3 {
+	@include rem($h3-font-size);
+	margin-bottom: 0;
+}
+
+h4 {
+	@include rem($h4-font-size);
+	font-weight: 700;
+}
+p,
+blockquote {
+	line-height: $line-height;
+}
+
+header, footer {
+	background: #333 url('../img/bg.png');
+	&:after {
+		content: "";
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #4c4c4c;
+		@include filter-gradient(#4c4c4c, #131313, vertical);
+		@include background-image(linear-gradient(top,  #4c4c4c 0%,#131313 100%));
+		@include opacity(.35);
+		z-index: 0;
+	}
+}
+header {
+	hgroup {
+		position: relative;
+		@include row;
+		z-index: 1;
+		text-align: center;
+	}
+	h1 {
+		margin: 0;
+	}
+	h1, h2 {
+		color: #f1f1f1;
+		margin-top: 20px;
+		text-align: center;
+	}
+	h2 {
+		margin-top: 0;
+		@include rem(15);
+		@include opacity(.5);
+	}
+	.headshot {
+		display: none;
+		width: 128px;
+		height: 128px;
+		z-index: 3;
+		overflow: hidden;
+		position: absolute;
+		left: 0;
+		top: 0;
+		border: solid 3px rgba(#fff, .8);
+		@include box-shadow(0 2px 2px 0 rgba(0,0,0,0.25));
+		@include border-radius(100%);
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+		}
+	}
+	
 }
 
 nav {
-    position: fixed;
-    bottom: $icon-size/2;
-    left: 0px;
-    width: 100%;
-    span {
-        @include grid-column(4);
-    }
-    a {
-        position: relative;
-        width: $icon-size;
-        height: $icon-size;
-        display: block;
-        color: $icon-color;
-        text-decoration: none;
-        margin: 0 auto;
-        i {
-            font-size: 7em;
-            position: relative;
-            top: 35px;
-            left: 37px;
-        }
-        div.info-wrap,
-        div.info {
-            position: absolute;
-            width: $icon-size;
-            height: $icon-size;
-            @include border-radius(50%);
-            @include transition(all 0.4s ease-in-out);            
-            @include perspective(800px);
-        }
-        div.info-wrap {
-            background: #ccc;
-            @include box-shadow(inset 0 0 15px rgba(0,0,0,.5));
-            div.info {
-                @include transform-style(preserve-3d);
-                &> div {
-                    display: block;
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    @include border-radius(50%);
-                    @include transition(all 0.3s ease-in-out);
-                }
-                &>div.description {
-                    padding: 40px;
-                    color: $text-color;
-                    @include border-radius(50%);
-                    overflow: hidden;
-                }
-                div.cover {
-                    background: #333;
-                    z-index: 100;
-                    @include transform-origin(100% 50% 0 true);
-                }
-            }
-            &:hover {
-                background: #eee;
-                div.info div.cover {
-                    @include transform(rotate(180deg));
-                }
-            }
-        }
-    }
-    p {
-        display: inline;
-        font-size: 1.5em;
-        padding: 15px 30px;
-        position: absolute;
-    }
+	display: block;
+	clear: both;
+	width: 100%;
+	ul {
+		@include no-padding;
+		li {
+			display: block;
+			a {
+				display: none;
+				background: rgba(#000, .5);
+				text-align: center;
+				padding: 5px 0;
+				margin-bottom: 1px;
+				&.active {
+					display: block;
+				}
+			}
+		}
+	}
 }
 
+header, nav {
+	position: relative;
+	width: 100%;
+	z-index: 1;
+	a, a:visited {
+		text-decoration: none;
+	}
+}
+
+hr {
+	@include clear;
+	@include row;
+	display: block;
+	height:1px;
+	background: #ccc;
+	border: 0;
+	margin: 20px auto;
+}
+
+.hide,
 .hidden {
-    display: none;
+	display: none;
+}
+
+input[type=submit],
+{
+	@include border-radius(5px);
+	background: $btn-bg-color;
+	color: $btn-text-color;
+	font-weight: 200;
+	border: 1px solid transparent;
+	padding: 10px 15px;
+	@include rem(18);
+	@include transition(all .3s ease);
+	&:hover {
+		background: $btn-bg-hover;
+		color: $btn-text-hover;
+	}
+}
+
+input[type=text],
+textarea {
+	width: 100%;
+	@include clear;
+    border: 1px solid #ccc;
+    @include rem(18);
+    padding: 3px;
+    outline: none;
+}
+
+textarea {
+    height: 250px;
+}
+
+main {
+	position: relative;
+	@include row;
+	@include clear;
+	padding-bottom: 40px;
+	a {
+		border-bottom: 1px solid rgba($link-color, .2);
+	}
+	section {
+		position: relative;
+		padding: 0px 25px;
+	}
+	#projects ul li {
+		list-style: none;
+	}
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    text-align: center;
-    width: 100%;
+	position: relative;
+	height: 45px;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	p {
+		float: left;
+		width: 100%;
+		position: relative;
+		z-index: 1;
+		display: block;
+		text-align: center;
+		@include rem(14);
+		color: #fff;
+		color: rgba(255,255,255,.5);
+		font-family: $footer-font-family;
+		line-height: $footer-line-height;
+		font-weight: 300;
+		padding: 0 $padding;
+	}
 }

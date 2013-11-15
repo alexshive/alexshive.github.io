@@ -1,0 +1,73 @@
+@include respond-to(tablet-desktop) {
+	.hide,
+	.hidden {
+		display: block;
+		@include opacity(0);
+		left: -100%;
+	}
+	header {
+		position: relative;
+		height: 97px;
+		padding-top: 20px;
+		.headshot {
+			display: block;
+		}
+		h1, h2 {
+			float: left;
+			margin-left: 128px;
+		}
+		h2 {
+			position: absolute;
+			left: 10px;
+			top: 80px;
+			color: #333;
+		}
+	}
+	nav {
+		position: absolute;
+		right: 0;
+		ul {
+			position: absolute;
+			right: 0;
+			margin: 43px 0 0 0;
+		}
+		ul li {
+			list-style: none;
+			display: inline-block;
+			vertical-align: top;
+			zoom: 1;
+			*display: inline;
+			a {
+				color: $nav-link-color;
+				background: transparent;
+				display: block;
+				text-align: left;
+				margin-left: 15px;
+				padding: 5px 10px;
+				border-bottom: 3px solid $body-bg-color;
+				&.active {
+					border-color: rgba($link-color, .6);
+				}
+			}
+		}
+	}
+	
+	main {
+		display: block;
+		@include row;
+		padding-top: 25px;
+		div.skill {
+			@include col(4);
+		}
+		section.panel {
+			position: absolute;
+			width: 100%;
+			@include transition(all .3s ease);
+		}
+	}
+
+	footer {
+		position: fixed;
+	}
+
+}
