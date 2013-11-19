@@ -1334,34 +1334,38 @@ main #projects ul li h4, main #projects ul li p {
 main #projects ul li img {
   width: 100%;
 }
-/* line 262, ../sass/_base.scss */
+/* line 260, ../sass/_base.scss */
+main #projects ul li .screenshots {
+  min-height: 400px;
+}
+/* line 265, ../sass/_base.scss */
 main .social a {
   display: block;
   padding: 10px 0;
   border: 0;
   color: #333;
 }
-/* line 265, ../sass/_base.scss */
+/* line 268, ../sass/_base.scss */
 main .social a .genericon {
   font-size: 30px;
   font-size: 1.66667rem;
 }
-/* line 268, ../sass/_base.scss */
+/* line 271, ../sass/_base.scss */
 main .social a em {
   font-style: normal;
   margin-left: 15px;
 }
-/* line 274, ../sass/_base.scss */
+/* line 277, ../sass/_base.scss */
 main .social a:hover {
   color: #349adf;
 }
-/* line 278, ../sass/_base.scss */
+/* line 281, ../sass/_base.scss */
 main label, main input[type=submit] {
   display: block;
   margin-top: 15px;
 }
 
-/* line 284, ../sass/_base.scss */
+/* line 287, ../sass/_base.scss */
 footer {
   position: relative;
   height: 45px;
@@ -1370,7 +1374,7 @@ footer {
   width: 100%;
   z-index: 100;
 }
-/* line 291, ../sass/_base.scss */
+/* line 294, ../sass/_base.scss */
 footer p {
   float: left;
   width: 100%;
@@ -1546,32 +1550,38 @@ footer p {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
-  /* line 111, ../sass/_desktop.scss */
-  main #projects ul li .details {
+  /* line 110, ../sass/_desktop.scss */
+  main #projects ul li.project {
+    float: left;
+    width: 100%;
+    clear: both;
+  }
+  /* line 114, ../sass/_desktop.scss */
+  main #projects ul li.project .details {
     position: relative;
     float: left;
     width: 41.66667%;
     padding-left: 5px;
     padding-right: 5px;
   }
-  /* line 114, ../sass/_desktop.scss */
-  main #projects ul li .screenshots {
+  /* line 117, ../sass/_desktop.scss */
+  main #projects ul li.project .screenshots {
     position: relative;
     float: left;
     width: 58.33333%;
     padding-left: 5px;
     padding-right: 5px;
   }
-  /* line 116, ../sass/_desktop.scss */
-  main #projects ul li .screenshots ul li {
+  /* line 119, ../sass/_desktop.scss */
+  main #projects ul li.project .screenshots ul li {
     float: left;
   }
-  /* line 119, ../sass/_desktop.scss */
-  main #projects ul li .screenshots img {
+  /* line 122, ../sass/_desktop.scss */
+  main #projects ul li.project .screenshots img {
     z-index: 2;
   }
 
-  /* line 125, ../sass/_desktop.scss */
+  /* line 128, ../sass/_desktop.scss */
   footer {
     position: absolute;
     bottom: 0;

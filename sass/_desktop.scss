@@ -107,7 +107,10 @@
 			width: 100%;
 			@include transition(all .3s ease);
 		}
-		#projects ul li {
+		#projects ul li.project {
+			float: left;
+			width: 100%;
+			clear: both;
 			.details {
 				@include col(5);
 			}
