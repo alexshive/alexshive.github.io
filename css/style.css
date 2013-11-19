@@ -1274,7 +1274,6 @@ main {
   zoom: 1;
   clear: both;
   zoom: 1;
-  padding-bottom: 40px;
 }
 /* line 3, ../sass/_grid.scss */
 main:before, main:after {
@@ -1294,48 +1293,84 @@ main:before, main:after {
 main:after {
   clear: both;
 }
-/* line 240, ../sass/_base.scss */
+/* line 239, ../sass/_base.scss */
+main .wrapper {
+  clear: both;
+  zoom: 1;
+}
+/* line 4, ../sass/_mixins.scss */
+main .wrapper:before, main .wrapper:after {
+  content: "";
+  display: table;
+}
+/* line 5, ../sass/_mixins.scss */
+main .wrapper:after {
+  clear: both;
+}
+/* line 242, ../sass/_base.scss */
 main a {
   border-bottom: 1px solid rgba(52, 154, 223, 0.2);
 }
-/* line 243, ../sass/_base.scss */
+/* line 245, ../sass/_base.scss */
 main section {
   position: relative;
   padding: 0px 25px;
 }
-/* line 247, ../sass/_base.scss */
+/* line 249, ../sass/_base.scss */
 main #projects ul {
   padding: 0;
   margin: 0;
 }
-/* line 249, ../sass/_base.scss */
+/* line 251, ../sass/_base.scss */
 main #projects ul li {
   list-style: none;
   text-align: center;
 }
-/* line 252, ../sass/_base.scss */
+/* line 254, ../sass/_base.scss */
 main #projects ul li h4, main #projects ul li p {
   text-align: left;
 }
-/* line 255, ../sass/_base.scss */
+/* line 257, ../sass/_base.scss */
 main #projects ul li img {
   width: 100%;
 }
-/* line 260, ../sass/_base.scss */
+/* line 262, ../sass/_base.scss */
+main .social a {
+  display: block;
+  padding: 10px 0;
+  border: 0;
+  color: #333;
+}
+/* line 265, ../sass/_base.scss */
+main .social a .genericon {
+  font-size: 30px;
+  font-size: 1.66667rem;
+}
+/* line 268, ../sass/_base.scss */
+main .social a em {
+  font-style: normal;
+  margin-left: 15px;
+}
+/* line 274, ../sass/_base.scss */
+main .social a:hover {
+  color: #349adf;
+}
+/* line 278, ../sass/_base.scss */
 main label, main input[type=submit] {
   display: block;
   margin-top: 15px;
 }
 
-/* line 266, ../sass/_base.scss */
+/* line 284, ../sass/_base.scss */
 footer {
   position: relative;
   height: 45px;
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 100;
 }
-/* line 272, ../sass/_base.scss */
+/* line 291, ../sass/_base.scss */
 footer p {
   float: left;
   width: 100%;
@@ -1354,31 +1389,56 @@ footer p {
 }
 
 @media only screen and (min-width: 979px) {
-  /* line 3, ../sass/_desktop.scss */
+  /* line 2, ../sass/_desktop.scss */
+  html, body {
+    height: 100%;
+  }
+
+  /* line 5, ../sass/_desktop.scss */
+  .container {
+    position: relative;
+    min-height: 100%;
+  }
+  /* line 8, ../sass/_desktop.scss */
+  .container:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    opacity: 0.5;
+  }
+
+  /* line 19, ../sass/_desktop.scss */
   .hide,
   .hidden {
     display: block;
+    position: absolute;
+    height: 0;
+    overflow: hidden;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     left: -100%;
   }
 
-  /* line 8, ../sass/_desktop.scss */
+  /* line 27, ../sass/_desktop.scss */
   header {
     position: relative;
     height: 97px;
     padding-top: 20px;
   }
-  /* line 12, ../sass/_desktop.scss */
+  /* line 31, ../sass/_desktop.scss */
   header .headshot {
     display: block;
   }
-  /* line 15, ../sass/_desktop.scss */
+  /* line 34, ../sass/_desktop.scss */
   header h1, header h2 {
     float: left;
     margin-left: 128px;
   }
-  /* line 19, ../sass/_desktop.scss */
+  /* line 38, ../sass/_desktop.scss */
   header h2 {
     position: absolute;
     left: 10px;
@@ -1386,18 +1446,18 @@ footer p {
     color: #333;
   }
 
-  /* line 26, ../sass/_desktop.scss */
+  /* line 45, ../sass/_desktop.scss */
   nav {
     position: absolute;
     right: 0;
   }
-  /* line 29, ../sass/_desktop.scss */
+  /* line 48, ../sass/_desktop.scss */
   nav ul {
     position: absolute;
     right: 0;
     margin: 43px 0 0 0;
   }
-  /* line 34, ../sass/_desktop.scss */
+  /* line 53, ../sass/_desktop.scss */
   nav ul li {
     list-style: none;
     display: inline-block;
@@ -1405,7 +1465,7 @@ footer p {
     zoom: 1;
     *display: inline;
   }
-  /* line 40, ../sass/_desktop.scss */
+  /* line 59, ../sass/_desktop.scss */
   nav ul li a {
     color: #bebebe;
     background: transparent;
@@ -1415,13 +1475,15 @@ footer p {
     padding: 5px 10px;
     border-bottom: 3px solid #f1f1f1;
   }
-  /* line 48, ../sass/_desktop.scss */
+  /* line 67, ../sass/_desktop.scss */
   nav ul li a.active {
     border-color: rgba(52, 154, 223, 0.6);
   }
 
-  /* line 55, ../sass/_desktop.scss */
+  /* line 74, ../sass/_desktop.scss */
   main {
+    position: relative;
+    z-index: 2;
     display: block;
     width: 100%;
     margin-left: auto;
@@ -1431,6 +1493,7 @@ footer p {
     max-width: 1140px;
     zoom: 1;
     padding-top: 25px;
+    padding-bottom: 60px;
   }
   /* line 3, ../sass/_grid.scss */
   main:before, main:after {
@@ -1441,7 +1504,7 @@ footer p {
   main:after {
     clear: both;
   }
-  /* line 59, ../sass/_desktop.scss */
+  /* line 81, ../sass/_desktop.scss */
   main div.skill {
     position: relative;
     float: left;
@@ -1449,16 +1512,41 @@ footer p {
     padding-left: 5px;
     padding-right: 5px;
   }
-  /* line 62, ../sass/_desktop.scss */
+  /* line 85, ../sass/_desktop.scss */
+  main #contact h3 {
+    float: left;
+  }
+  /* line 88, ../sass/_desktop.scss */
+  main #contact label {
+    clear: both;
+  }
+  /* line 92, ../sass/_desktop.scss */
+  main .social {
+    float: right;
+    margin: 2em 0;
+  }
+  /* line 95, ../sass/_desktop.scss */
+  main .social a {
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;
+    padding-left: 10px;
+  }
+  /* line 101, ../sass/_desktop.scss */
+  main .social a em {
+    font-size: 15px;
+    font-size: 0.83333rem;
+  }
+  /* line 106, ../sass/_desktop.scss */
   main section.panel {
-    position: absolute;
     width: 100%;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
-  /* line 68, ../sass/_desktop.scss */
+  /* line 111, ../sass/_desktop.scss */
   main #projects ul li .details {
     position: relative;
     float: left;
@@ -1466,7 +1554,7 @@ footer p {
     padding-left: 5px;
     padding-right: 5px;
   }
-  /* line 71, ../sass/_desktop.scss */
+  /* line 114, ../sass/_desktop.scss */
   main #projects ul li .screenshots {
     position: relative;
     float: left;
@@ -1474,21 +1562,19 @@ footer p {
     padding-left: 5px;
     padding-right: 5px;
   }
-  /* line 73, ../sass/_desktop.scss */
+  /* line 116, ../sass/_desktop.scss */
+  main #projects ul li .screenshots ul li {
+    float: left;
+  }
+  /* line 119, ../sass/_desktop.scss */
   main #projects ul li .screenshots img {
-    display: none;
-    position: absolute;
     z-index: 2;
   }
-  /* line 77, ../sass/_desktop.scss */
-  main #projects ul li .screenshots img.show {
-    display: block;
-    position: relative;
-    z-index: 1;
-  }
 
-  /* line 87, ../sass/_desktop.scss */
+  /* line 125, ../sass/_desktop.scss */
   footer {
-    position: fixed;
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
 }

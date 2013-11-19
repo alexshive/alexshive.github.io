@@ -1,7 +1,26 @@
 @include respond-to(tablet-desktop) {
+	html, body {
+		height: 100%;
+	}
+	.container {
+		position: relative;
+		min-height: 100%;
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			min-height: 100%;
+			@include opacity(.5);
+		}
+	}
 	.hide,
 	.hidden {
 		display: block;
+		position: absolute;
+		height: 0;
+		overflow: hidden;
 		@include opacity(0);
 		left: -100%;
 	}
@@ -53,14 +72,38 @@
 	}
 	
 	main {
+		position: relative;
+		z-index: 2;
 		display: block;
 		@include row;
 		padding-top: 25px;
+		padding-bottom: 60px;
 		div.skill {
 			@include col(4);
 		}
+		#contact {
+			h3 {
+				float: left;
+			}
+			label {
+				clear: both;
+			}
+		}
+		.social {
+			float: right;
+			margin: 2em 0;
+			a {
+				display: inline-block;
+				vertical-align: top;
+				zoom: 1;
+				*display: inline;
+				padding-left: 10px;
+				em {
+					@include rem(15);
+				}
+			}
+		}
 		section.panel {
-			position: absolute;
 			width: 100%;
 			@include transition(all .3s ease);
 		}
@@ -70,22 +113,19 @@
 			}
 			.screenshots {
 				@include col(7);
+				ul li {
+					float: left;
+				}
 				img {
-					display: none;
-					position: absolute;
 					z-index: 2;
-					&.show {
-						display: block;
-						position: relative;
-						z-index: 1;
-					}
 				}
 			}
 		}
 	}
-
 	footer {
-		position: fixed;
+		position: absolute;
+		bottom: 0;
+		left: 0;
 	}
 
 }

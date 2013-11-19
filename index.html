@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<div class="container">
 	<header>
 		<hgroup>
 			<h1>Alex Shive</h1>
@@ -46,9 +46,13 @@
 							</div>
 							
 							<div class="screenshots">
-								<img src="work/justjennette-desktop.jpg" class="show" />
-								<img src="work/justjennette-tablet.jpg" />
-								<img src="work/justjennette-app.jpg" />
+								<div class="slider">
+									<ul>
+										<li><img src="work/justjennette-desktop.jpg" /></li>
+										<li><img src="work/justjennette-tablet.jpg" /></li>
+										<li><img src="work/justjennette-app.jpg" /></li>
+									</ul>
+								</div>
 							</div>
 
 						</li>
@@ -62,7 +66,11 @@
 							</div>
 
 							<div class="screenshots">
-								<img src="work/jennettemccurdy-desktop.jpg" class="show" />
+								<div class="slider">
+									<ul>
+										<li><img src="work/jennettemccurdy-desktop.jpg" /></li>
+									</ul>
+								</div>
 							</div>
 
 						</li>
@@ -77,13 +85,30 @@
 							</div>
 							
 							<div class="screenshots">
-								<img src="work/wpghost-desktop.jpg" class="show" />
+								<div class="slider">
+									<ul>
+										<li><img src="work/wpghost-desktop.jpg" /></li>
+									</ul>
+								</div>
 							</div>
 
 						</li>
 						<li>
-							<h4>EIG Pattern Library</h4>
-							<p>It's become standard practice for large companies to adapt a pattern library to avoid confusion between designers and developers. It helps simplify the process, avoid repeating styles, and prevent bad coding practices.</p>
+							<div class="details">
+								<h4>EIG Pattern Library</h4>
+								<p>It's become standard practice for large companies to adapt a pattern library to avoid confusion between designers and developers. It helps simplify the process, avoid repeating styles, and prevent bad coding practices.</p>
+
+								<p><a href="http://www.eig-design.com/" target="_blank">View the EIG Pattern Library</a></p>
+							</div>
+
+							<div class="screenshots">
+								<div class="slider">
+									<ul>
+										<li><img src="work/EIG-desktop.jpg" /></li>
+										<li><img src="work/EIG-desktop-2.jpg" /></li>
+									</ul>
+								</div>
+							</div>
 
 						</li>
 
@@ -136,6 +161,11 @@
 		<!-- Contact -->
 		<section id="contact" class="hidden panel">
 			<h3>Let's keep in touch</h3>
+			<div class="social">
+				<a href="http://www.linkedin.com/in/alexshive/"><span class="genericon genericon-linkedin-alt"></span> <em>linkedin.com/in/alexshive</em></a>
+				<a href="https://github.com/alexshive"><span class="genericon genericon-github"></span> <em>github.com/alexshive</em></a>
+				<a href="#" id="email"><span class="genericon genericon-mail"></span> <em></em></a>
+			</div>
 			<form method="POST">
 				<label for="contact-name">Your Name</label>
 				<input type="text" id="contact-name" name="contact[name]" value="" />
@@ -157,9 +187,11 @@
 	<footer>
 		<p>&copy; 2001 - 2013</p>
 	</footer>
+</div>
 
-	<script src="js/jquery-2.0.3.min.js"></script>
-	<script src="js/script.js"></script>
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/unslider.min.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>

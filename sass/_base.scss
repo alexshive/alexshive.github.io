@@ -236,7 +236,9 @@ main {
 	position: relative;
 	@include row;
 	@include clear;
-	padding-bottom: 40px;
+	.wrapper {
+		@include clear;
+	}
 	a {
 		border-bottom: 1px solid rgba($link-color, .2);
 	}
@@ -257,6 +259,22 @@ main {
 			}
 		}
 	}
+	.social a {
+		display: block;
+		padding: 10px 0;
+		.genericon {
+			@include rem(30);
+		}
+		em {
+			font-style: normal;
+			margin-left: 15px;
+		}
+		border: 0;
+		color: #333;
+		&:hover {
+			color: $link-hover;
+		}
+	}
 	label, input[type=submit] {
 		display: block;
 		margin-top: 15px;
@@ -269,6 +287,7 @@ footer {
 	bottom: 0;
 	left: 0;
 	width: 100%;
+	z-index: 100;
 	p {
 		float: left;
 		width: 100%;
