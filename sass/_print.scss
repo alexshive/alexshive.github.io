@@ -1,0 +1,34 @@
+@media print {
+	header, footer {
+		background: transparent;
+		&:after {
+			display: none;
+		}
+	}
+	header {
+		padding-top: 20px;
+		h1, h2 {
+			@include no-padding;
+			text-align: left;
+		}
+	}
+	main section {
+		@include no-padding;
+		h3 {
+			@include rem(23);
+			margin-top: 10px;
+		}
+		form,
+		p a {
+			display: none;
+		}
+	}
+	header h1,
+	header h2,
+	footer p {
+		color: #333;
+	}
+	nav {
+		display: none;
+	}
+}

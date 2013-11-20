@@ -87,7 +87,7 @@
 			}
 			label {
 				clear: both;
-			}
+			}			
 		}
 		.social {
 			float: right;
@@ -116,11 +116,28 @@
 			}
 			.screenshots {
 				@include col(7);
-				ul li {
+				ul {				
 					float: left;
-				}
-				img {
-					z-index: 2;
+					height: 550px;
+					width: 100%;
+					overflow: hidden;
+					li {
+						position: relative;
+						img {
+							position: absolute;
+							display: block;
+							float: left;
+							left: 0;
+							top: 0;
+							@include opacity(0);
+							@include transition(all 1s ease);
+						}
+						&.active {
+							img {
+								@include opacity(1);
+							}
+						}
+					}
 				}
 			}
 		}

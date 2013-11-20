@@ -6,7 +6,24 @@
 	box-sizing:         border-box;
 }
 
+// Corrects block display not defined in IE6/7/8/9 & FF3
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+
 html, body {
+	@include no-padding;
 	background-color: $body-bg-color;
 	color: $font-color;
 	font-family: $body-font-family;
@@ -281,6 +298,21 @@ main {
 	label, input[type=submit] {
 		display: block;
 		margin-top: 15px;
+	}
+	label.error {
+		color: #D13E1A;
+		margin-top: 0;
+	}
+	#error,
+	#message {
+		display: none;
+		background: $link-color;
+		text-align: center;
+		padding: 10px;
+		color: $body-bg-color;
+	}
+	#error {
+		background: #D13E1A;
 	}
 }
 
