@@ -6,19 +6,7 @@
 		background: #000 url('../img/cover.jpg') no-repeat center;
 		background-attachment: fixed;
 		background-size: cover;
-	}
-	.cover {
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		background: #000;
-		@include opacity(.5);
-		width: 100%;
-		height: 100%;
-		z-index: 1;
-	}
+	}	
 	.hide,
 	.hidden {
 		display: block;
@@ -97,12 +85,7 @@
 		display: block;
 		padding-top: 25px;
 		padding-bottom: 60px;
-		max-width: none;
-		div.wrapper {
-			@include row;
-			position: relative;
-			z-index: 2;
-		}
+		max-width: none;		
 		div.skill {
 			@include col(4);
 		}
@@ -137,23 +120,22 @@
 			padding-top: 60px;
 			width: 100%;
 			@include transition(all .3s ease);
+			.wrapper {
+				padding: 0 20px;
+			}	
 		}
-		#portfolio.featured {
-			background: url('../img/portfolio/featured.jpg') no-repeat center;
+		section.jennapp {
+			background: #000 url('../img/portfolio/jennapp.jpg') no-repeat center;
 			background-size: cover;
 			background-position: fixed;
-			color: #FFF;
-			div.panel {
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				.cover {
-					@include opacity(.8);
-					@include background-image(linear-gradient(top,  $header-gradient-top 0%, $header-gradient-bottom 100%));
-					@include filter-gradient($header-gradient-top,  $header-gradient-bottom, vertical);
-				}
+			p.buttons a {
+				display: inline;
 			}
+		}
+		section.featured {
+			background: #000 url('../img/portfolio/featured.jpg') no-repeat center;
+			background-size: cover;
+			background-position: fixed;
 		}
 		#projects ul li.project {
 			float: left;
@@ -190,5 +172,4 @@
 			}
 		}
 	}
-
 }

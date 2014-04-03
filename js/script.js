@@ -9,12 +9,21 @@ var F = function() {
 		this.sections();
 		this.nav();
 		this.email();
-		//this.slider();
+		this.slider();
 	};
 
 	this.sections = function() {
 		$('main section').each(function() {
-			$(this).css('min-height', $(window).height());
+			var $wrapper = $(this).find('.wrapper');
+			var $sectionHeight = $(window).height();
+			var $wrapperHeight = 0;
+			if($wrapper) {
+				$wrapperHeight = $wrapper.height();
+				if($wrapperHeight > $sectionHeight) {
+					$sectionHeight = $wrapperHeight;
+				}
+			}
+			$(this).css('min-height', $sectionHeight);
 		});
 	};
 
