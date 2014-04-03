@@ -1,5 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700);
-
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing:    border-box;
@@ -89,7 +87,6 @@ h1 {
 	line-height: 1;
 	padding: 0px $padding/2;
 	text-align: left;
-	color: darken($body-bg-color, 60%);
 }
 
 h2 {
@@ -99,11 +96,13 @@ h2 {
 }
 
 h3 {
+	font-family: $h3-font-family;
 	@include rem($h3-font-size);
 	margin-bottom: 0;
 }
 
 h4 {
+	font-family: $h4-font-family;
 	@include rem($h4-font-size);
 	font-weight: 700;
 }
@@ -113,81 +112,52 @@ blockquote {
 }
 
 header, footer {
-	background: #333 url('../img/bg.png');
-	&:after {
-		content: "";
-		position: absolute;
-		display: block;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: $header-gradient-top;
-		@include filter-gradient($header-gradient-top,  $header-gradient-bottom, vertical);
-		@include background-image(linear-gradient(top,  $header-gradient-top 0%, $header-gradient-bottom 100%));
-		@include opacity(.35);
-		z-index: 0;
-	}
+	background: #000;
 }
 header {
 	hgroup {
 		position: relative;
 		@include row;
-		z-index: 1;
 		text-align: center;
+	}
+	h1, h2, h3 {
+		text-align: center;
+		margin: 0px;
+		padding: 20px 20px 10px;
+		color: $header-color;
 	}
 	h1 {
-		margin: 0;
-	}
-	h1, h2 {
-		color: #f1f1f1;
-		margin-top: 20px;
-		text-align: center;
-	}
-	h2 {
 		margin-top: 0;
-		@include rem(15);
-		@include opacity(.5);
-	}
-	.headshot {
-		display: none;
-		width: 128px;
-		height: 128px;
-		z-index: 3;
-		overflow: hidden;
-		position: absolute;
-		left: 0;
-		top: 0;
-		border: solid 3px rgba(#fff, .8);
-		@include box-shadow(0 2px 2px 0 rgba(0,0,0,0.25));
-		@include border-radius(100%);
-		img {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			margin: auto;
-		}
 	}
 	
 }
 
 nav {
+	position: fixed;
+	bottom: 0;
 	display: block;
 	clear: both;
 	width: 100%;
 	ul {
 		@include no-padding;
 		li {
-			display: block;
+			display: inline;
+			@include col(4);
+			@include no-padding;
 			a {
-				display: none;
-				background: rgba(#000, .5);
+				display: block;
+				background: rgba(#000, .9);
+				color: $nav-link-color;
 				text-align: center;
 				padding: 5px 0;
-				margin-bottom: 1px;
+				margin: 0;				
+				&:hover {
+					color: $nav-link-hover;
+					background: #000;
+				}
 				&.active {
+					background: $body-bg-color;
+					color: #000;
 					display: block;
 				}
 			}
@@ -195,10 +165,9 @@ nav {
 	}
 }
 
-header, nav {
-	position: relative;
+header, nav, hgroup {
 	width: 100%;
-	z-index: 1;
+	z-index: 3;
 	a, a:visited {
 		text-decoration: none;
 	}
@@ -260,6 +229,7 @@ main {
 		border-bottom: 1px solid rgba($link-color, .2);
 	}
 	section {
+		clear: both;
 		position: relative;
 		padding: 0px 25px;
 	}

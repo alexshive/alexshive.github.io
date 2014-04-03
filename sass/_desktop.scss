@@ -1,19 +1,23 @@
 @include respond-to(tablet-desktop) {
-	html, body {
+	html, body, .spacer {
 		height: 100%;
 	}
-	.container {
-		position: relative;
-		min-height: 100%;
-		&:after {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			min-height: 100%;
-			@include opacity(.5);
-		}
+	body {
+		background: #000 url('../img/cover.jpg') no-repeat center;
+		background-attachment: fixed;
+		background-size: cover;
+	}
+	.cover {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: #000;
+		@include opacity(.5);
+		width: 100%;
+		height: 100%;
+		z-index: 1;
 	}
 	.hide,
 	.hidden {
@@ -25,61 +29,87 @@
 		left: -100%;
 	}
 	header {
-		position: relative;
-		height: 97px;
-		padding-top: 20px;
-		.headshot {
-			display: block;
-		}
-		h1, h2 {
-			float: left;
-			margin-left: 128px;
-		}
-		h2 {
+		z-index: 0;
+		position: fixed;
+		height: 100%;
+		background: transparent;		
+		hgroup {
 			position: absolute;
-			left: 10px;
-			top: 80px;
-			color: #333;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			margin: auto;
+			height: 0;
+		}
+		h1, h2, h3 {
+			padding: 0;
+		}
+		h1 {
+			font-weight: 100;
+			margin-top: -50px;
+			@include rem(52);
+			color: #ccc;
+			strong {
+				color: #fff;
+			}			
+		}
+		h2, h3 {
+			@include opacity(.5);
 		}
 	}
 	nav {
+		background: rgba(0,0,0,.3);
 		position: absolute;
-		right: 0;
-		ul {
-			position: absolute;
-			right: 0;
-			margin: 43px 0 0 0;
-		}
+		margin-bottom: 0px;
+		z-index: 3;
+		text-align: center;
 		ul li {
-			list-style: none;
-			display: inline-block;
-			vertical-align: top;
-			zoom: 1;
-			*display: inline;
 			a {
 				color: $nav-link-color;
 				background: transparent;
 				display: block;
-				text-align: left;
-				margin-left: 15px;
-				padding: 5px 10px;
-				border-bottom: 3px solid $body-bg-color;
-				&.active {
+				padding: 10px 0;
+				// border-bottom: 1px solid rgba($body-bg-color, .2);
+				&.active,
+				&:hover {
 					border-color: rgba($link-color, .6);
 				}
 			}
 		}
+		&.fixed {
+			position: fixed;
+			top: -100px;
+			bottom: auto;
+			z-index: 2;
+			background: rgba(0,0,0,.8);
+			@include transition(top .3s ease);		
+		}
+		&.show {
+			top: 0;
+		}
 	}
 	
 	main {
+		background: $body-bg-color;
 		position: relative;
-		z-index: 2;
+		z-index: 1;
 		display: block;
-		@include row;
 		padding-top: 25px;
 		padding-bottom: 60px;
+		max-width: none;
+		div.wrapper {
+			@include row;
+			position: relative;
+			z-index: 2;
+		}
 		div.skill {
 			@include col(4);
+		}
+		#about {
+			ul li {
+				margin-top: 8px;
+			}
 		}
 		#contact {
 			h3 {
@@ -103,9 +133,27 @@
 				}
 			}
 		}
-		section.panel {
+		section {
+			padding-top: 60px;
 			width: 100%;
 			@include transition(all .3s ease);
+		}
+		#portfolio.featured {
+			background: url('../img/portfolio/featured.jpg') no-repeat center;
+			background-size: cover;
+			background-position: fixed;
+			color: #FFF;
+			div.panel {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				.cover {
+					@include opacity(.8);
+					@include background-image(linear-gradient(top,  $header-gradient-top 0%, $header-gradient-bottom 100%));
+					@include filter-gradient($header-gradient-top,  $header-gradient-bottom, vertical);
+				}
+			}
 		}
 		#projects ul li.project {
 			float: left;
@@ -120,7 +168,7 @@
 					float: left;
 					height: 550px;
 					width: 100%;
-					overflow: hidden;
+					// overflow: hidden;
 					li {
 						position: relative;
 						img {
@@ -129,7 +177,7 @@
 							float: left;
 							left: 0;
 							top: 0;
-							@include opacity(0);
+							// @include opacity(0);
 							@include transition(all 1s ease);
 						}
 						&.active {
@@ -141,11 +189,6 @@
 				}
 			}
 		}
-	}
-	footer {
-		position: absolute;
-		bottom: 0;
-		left: 0;
 	}
 
 }

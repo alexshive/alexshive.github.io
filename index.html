@@ -17,187 +17,202 @@
 
 </head>
 <body>
-<div class="container">
+
 	<header>
 		<hgroup>
-			<h1>Alex Shive</h1>
-			<h2>Web developer and lover of coffee.</h2>
-			<div class="headshot"><img src="img/girl.png" /></div>
-	
-			<nav>
-				<ul>
-					<li><a href="#" rel="about" class="">About</a></li>
-					<li><a href="#" rel="portfolio" class="active">Work</a></li>
-					<li><a href="#" rel="contact">Contact</a></li>
-				</ul>
-			</nav>
-		</hgroup>
-
+			<h1>Hello, my name is <strong>Alex Shive</strong></h1>
+			<h2>I'm a front-end developer, backend programmer, and graphic designer.</h2>
+		</hgroup>		
+		<div class="cover"></div>
 	</header>
 
+	<nav>
+		<ul>
+			<li><a href="#" rel="about" class="active">About Myself</a></li>
+			<li><a href="#" rel="portfolio">My portfolio</a></li>
+			<li><a href="#" rel="contact">Contact me</a></li>
+		</ul>
+	</nav>
+
+	<div class="spacer"></div>
+
 	<main>
-		<div class="wrapper">
-		<!-- Portfolio -->
-		<section id="portfolio" class="panel">
-			<h3>Work I've done</h3>
-				<div id="projects">
+
+		<!-- About -->
+		<section id="about">
+			<div class="wrapper">
+				<h3>About Myself</h3>
+				<p>I'm a bay area resident, a recent graduate from Cal State East Bay, and a forward thinker. I've currently accumilated over 12 years of experience as a front end developer, graphic designer, and engineer. I've enjoyed every moment of it and waking up to new possibilities. I enjoy a challenge and am always up to the task of problem solving as the web evolves. I strive to learn new web technology as it continuously evolves. </p>
+				<h3>What can I do for you:</h3>
+				<div class="skill">
+					<h4>Front end development</h4>
 					<ul>
-						<li class="project">
-							<div class="details">
-								<h4>JustJennette</h4>
-
-								<p>JustJennette is a fansite dedicated to the Nickelodeon celebrity actress Jennette McCurdy. Since it's debut in June 2010, JustJennette has been the most successful personal project to date. Under the hood, the custom layout was built for the <em>Wordpress framework</em> and optimized for <em>responsive design</em> with the aim of designing for mobile first. It is also utilizing Grunt for minification of <em>object oriented Javascript/jQuery</em> and <em>SCSS compiling</em>. </p>
-
-								<p>In addition to the website, there is a custom made <em>iOS and Android app</em>, named <strong>Jennapp</strong>. It's  available now for both iPhone and Android devices.</p>
-
-								<p><a href="http://justjennette.com" target="_blank">View JustJennette.com</a></p>
-							</div>
-							
-							<div class="screenshots">
-								<div class="slider">
-									<ul>
-										<li><img src="work/justjennette-desktop.jpg" /></li>
-										<li><img src="work/justjennette-tablet.jpg" /></li>
-										<li><img src="work/justjennette-app.jpg" /></li>
-									</ul>
-								</div>
-							</div>
-
-						</li>
-						<li class="project">
-							<div class="details">
-								<h4>JennetteMcCurdy.com</h4>
-
-								<p>Concept web design along with a custom made logo. Utilizes full page sliding effects and transitions with <em>CSS3</em> and integration with a <em>custom JSON API</em> from JustJennette for news source. The backend is hosted with <a href="https://www.appfog.com/" target="_blank">AppFog</a> using terminal commands and Git repositories. </p>
-
-								<p><a href="http://jennettemccurdy-v2.aws.af.cm/" target="_blank">View the JennetteMcCurdy.com prototype</a></p>
-							</div>
-
-							<div class="screenshots">
-								<div class="slider">
-									<ul>
-										<li><img src="work/jennettemccurdy-desktop.jpg" /></li>
-									</ul>
-								</div>
-							</div>
-
-						</li>
-						<li class="project">
-							<div class="details">
-								<h4>WPGhost</h4>
-								<p><a href="http://tryghost.org" target="_blank">Ghost</a> has been widely spread as a solution to simple blogging, with Wordpress being viewed as a CMS (Content Management System). </p>
-
-								<p>During its early phase of being hidden from the public, I tried to re-create the front-end experience. Instead of using NodeJS for the backend, I recreated using Wordpress. It was a fun learning experience in Javascript navigation and helped me expand my knowledge of Markdown. </p>
-
-								<p><a href="https://github.com/alexshive/wpghost" target="_blank">View the WPGhost repository</a></p>
-							</div>
-							
-							<div class="screenshots">
-								<div class="slider">
-									<ul>
-										<li><img src="work/wpghost-desktop.jpg" /></li>
-									</ul>
-								</div>
-							</div>
-
-						</li>
-						<li class="project">
-							<div class="details">
-								<h4>EIG Pattern Library</h4>
-								<p>It's become standard practice for large companies to adapt a pattern library to avoid confusion between designers and developers. It helps simplify the process, avoid repeating styles, and prevent bad coding practices.</p>
-
-								<p><a href="http://www.eig-design.com/" target="_blank">View the EIG Pattern Library</a></p>
-							</div>
-
-							<div class="screenshots">
-								<div class="slider">
-									<ul>
-										<li><img src="work/EIG-desktop.jpg" /></li>
-										<li><img src="work/EIG-desktop-2.jpg" /></li>
-									</ul>
-								</div>
-							</div>
-
-						</li>
-
+						<li>HTML 5</li>
+						<li>CSS 3 & SCSS</li>
+						<li>Javascript & jQuery</li>
+						<li>Adobe Creative Suite CS5</li>
+						<li>Grunt</li>
+						<li>RequireJS</li>
+						<li>Compass, Bootstrap & Foundation Frameworks</li>
 					</ul>
+				</div>
+				<div class="skill">
+					<h4>Back end programming</h4>
+					<ul>
+						<li>PHP</li>
+						<li>MySQL</li>
+						<li>mongoDB</li>
+						<li>Git & Perforce</li>
+						<li>Wordpress Template building & Ghost setup</li>
+					</ul>
+				</div>
+				<div class="skill">
+					<h4>Additional experience</h4>
+					<ul>
+						<li>Responsive design with full browser support</li>
+						<li>API development</li>
+						<li>iOS/Android App development</li>
+					</ul>
+				</div>
+				<h3>Looking for something specific?</h3>
+				<p>I'm always interested in various web technologies and can help you with the specifics. Feel free to <a href="#" class="jump" rel="contact">send me a quick message.</a></p>
+			</div>
+		</section>
+
+
+
+		<!-- Portfolio -->
+		<section id="portfolio" class="featured">
+			<div class="panel">
+				<div class="wrapper">
+					<h3>Latest Project</h3>
+					
+					<p>The photo gallery for JustJennette.com has received more traffic than the main domain. There was a need to preserve CPU usage and optimize for mobile. The backend is programmed with Coppermine, a PHP based script for photo galleries. However, there was no JSON API available. </p>
+
+					<p>I created a plugin called <a href="https://github.com/alexshive/JSONFeed">JSONFeed</a>. This displayed albums and photos in a useable format for jQuery. With the help of Amazon CloudFront's servers, I was also able to cache the JSON feed. This helped two ways: receive the API faster and use less server resources.</p>
+
+					<p><a href="http://photos.justjennette.com" target="_blank">View JustJennette Gallery</a></p>
+				</div>
+				<div class="cover"></div>
+			</div>
+			<div class="cover"></div>
+		</section>
+		<section>
+			<div class="wrapper">
+				<h3>Additional projects</h3>
+					<div id="projects">
+						<ul>
+							<li class="project">
+								<div class="details">
+									<h4>JustJennette</h4>
+
+									<p>JustJennette is a fansite dedicated to the Nickelodeon celebrity actress Jennette McCurdy. Since it's debut in June 2010, JustJennette has been the most successful personal project to date. Under the hood, the custom layout was built for the <em>Wordpress framework</em> and optimized for <em>responsive design</em> with the aim of designing for mobile first. It is also utilizing Grunt for minification of <em>object oriented Javascript/jQuery</em> and <em>SCSS compiling</em>. </p>
+
+									<p><a href="http://justjennette.com" target="_blank">View JustJennette.com</a></p>
+								</div>
+								
+								<div class="screenshots">
+									<div class="slider">
+										<ul>
+											<!--<li><img src="work/justjennette-tablet.jpg" /></li>-->
+											<li><img src="work/justjennette-desktop.jpg" /></li>
+										</ul>
+									</div>
+								</div>
+
+							</li>
+							<li class="project">
+								<div class="details">
+									<h4>JennetteMcCurdy.com</h4>
+
+									<p>Concept web design along with a custom made logo. Utilizes full page sliding effects and transitions with <em>CSS3</em> and integration with a <em>custom JSON API</em> from JustJennette for news source. The backend is hosted with <a href="https://www.appfog.com/" target="_blank">AppFog</a> using terminal commands and Git repositories. </p>
+								</div>
+
+								<div class="screenshots">
+									<div class="slider">
+										<ul>
+											<li><img src="work/jennettemccurdy-desktop.jpg" /></li>
+										</ul>
+									</div>
+								</div>
+
+							</li>
+							<li class="project">
+								<div class="details">
+									<h4>WPGhost</h4>
+									<p><a href="http://tryghost.org" target="_blank">Ghost</a> has been widely spread as a solution to simple blogging, with Wordpress being viewed as a CMS (Content Management System). </p>
+
+									<p>During its early phase of being hidden from the public, I tried to re-create the front-end experience. Instead of using NodeJS for the backend, I recreated using Wordpress. It was a fun learning experience in Javascript navigation and helped me expand my knowledge of Markdown. </p>
+
+									<p><a href="https://github.com/alexshive/wpghost" target="_blank">View the WPGhost repository</a></p>
+								</div>
+								
+								<div class="screenshots">
+									<div class="slider">
+										<ul>
+											<li><img src="work/wpghost-desktop.jpg" /></li>
+										</ul>
+									</div>
+								</div>
+
+							</li>
+							<li class="project">
+								<div class="details">
+									<h4>EIG Pattern Library</h4>
+									<p>It's become standard practice for large companies to adapt a pattern library to avoid confusion between designers and developers. It helps simplify the process, avoid repeating styles, and prevent bad coding practices.</p>
+
+									<p><a href="http://www.eig-design.com/" target="_blank">View the EIG Pattern Library</a></p>
+								</div>
+
+								<div class="screenshots">
+									<div class="slider">
+										<ul>
+											<li><img src="work/EIG-desktop.jpg" /></li>
+											<li><img src="work/EIG-desktop-2.jpg" /></li>
+										</ul>
+									</div>
+								</div>
+
+							</li>
+
+						</ul>
+					</div>
 				</div>
 		</section>
 		
-		<!-- About -->
-		<section id="about" class="hidden panel">
-			<h3>Hi there!</h3>
-			<p>I'm a bay area resident, a recent graduate from Cal State East Bay, and a forward thinker. I've currently accumilated over 12 years of experience as a front end developer, graphic designer, and engineer. I've enjoyed every moment of it and waking up to new possibilities. I enjoy a challenge and am always up to the task of problem solving as the web evolves. I strive to learn new web technology as it continuously evolves. </p>
-			<h3>What can I do for you:</h3>
-			<div class="skill">
-				<h4>Front end development</h4>
-				<ul>
-					<li>HTML 5</li>
-					<li>CSS 3 & SCSS</li>
-					<li>Javascript & jQuery</li>
-					<li>Adobe Photoshop CS5</li>
-					<li>Grunt</li>
-					<li>RequireJS</li>
-					<li>Bootstrap & Foundation</li>
-				</ul>
-			</div>
-			<div class="skill">
-				<h4>Back end programming</h4>
-				<ul>
-					<li>PHP</li>
-					<li>MySQL</li>
-					<li>mongoDB</li>
-					<li>Git</li>
-					<li>Wordpress/Ghost</li>
-				</ul>
-			</div>
-			<div class="skill">
-				<h4>Additional experience</h4>
-				<ul>
-					<li>Responsive design</li>
-					<li>API development with JSON output</li>
-					<li>Titanium SDK</li>
-					<li>iOS App development</li>
-					<li>Android App development</li>
-					<li>Worked with Instagram, Vine, Tumblr, and Youtube APIs</li>
-				</ul>
-			</div>
-			<h3>Looking for something specific?</h3>
-			<p>I'm always interested in various web technologies and can help you with the specifics. Feel free to <a href="#" class="jump" rel="contact">send me a quick message.</a></p>
-		</section>
+		
 		
 		<!-- Contact -->
-		<section id="contact" class="hidden panel">
-			<h3>Let's keep in touch</h3>
-			<div class="social">
-				<a href="http://www.linkedin.com/in/alexshive/"><span class="genericon genericon-linkedin-alt"></span> <em>linkedin.com/in/alexshive</em></a>
-				<a href="https://github.com/alexshive"><span class="genericon genericon-github"></span> <em>github.com/alexshive</em></a>
-				<a href="#" id="email"><span class="genericon genericon-mail"></span> <em></em></a>
-			</div>
-			<form method="POST" action="">
-				<label for="contact-name">Your Name</label>
-				<input type="text" id="contact-name" name="contact[name]" value="" required />
-				
-				<label for="contact-email">E-mail Address</label>
-				<input type="text" id="contact-email" name="contact[email]" value="" required />
+		<section id="contact">
+			<div class="wrapper">
+				<h3>Let's keep in touch</h3>
+				<div class="social">
+					<a href="http://www.linkedin.com/in/alexshive/"><span class="genericon genericon-linkedin-alt"></span> <em>linkedin.com/in/alexshive</em></a>
+					<a href="https://github.com/alexshive"><span class="genericon genericon-github"></span> <em>github.com/alexshive</em></a>
+					<a href="#" id="email"><span class="genericon genericon-mail"></span> <em></em></a>
+				</div>
+				<form method="POST" action="">
+					<label for="contact-name">Your Name</label>
+					<input type="text" id="contact-name" name="contact[name]" value="" required />
 					
-				<label for="contact-message">Message</label>
-				<textarea id="contact-message" name="contact[message]" required></textarea>
-				
-				<input type="submit" id="submit" value="Send Message" />
+					<label for="contact-email">E-mail Address</label>
+					<input type="text" id="contact-email" name="contact[email]" value="" required />
+						
+					<label for="contact-message">Message</label>
+					<textarea id="contact-message" name="contact[message]" required></textarea>
+					
+					<input type="submit" id="submit" value="Send Message" />
 
-				<div id="message">Thank you! Your message has been sent successully. Looking forward to chatting with you.</div>
-				<div id="error">Uh oh! Something went wrong. Please contact directly via email <b></b></div>
-
-			</form>
+					<div id="message">Thank you! Your message has been sent successully. Looking forward to chatting with you.</div>
+					<div id="error">Uh oh! Something went wrong. Please contact directly via email <b></b></div>
+				</form>
+			</div>
 		</section>
-
-		</div>
 	
 	</main>
 	
 	<footer>
-		<p>&copy; 2001 - 2013</p>
+		<p>&copy; 2001 - 2014</p>
 	</footer>
 </div>
 

@@ -6,9 +6,16 @@ k = "U0RCLW1NQWpkTXpJMWcxVVpmTjRwUQ=="; // p
 var F = function() {
 
 	this.init = function() {
+		this.sections();
 		this.nav();
 		this.email();
-		this.slider();
+		//this.slider();
+	};
+
+	this.sections = function() {
+		$('main section').each(function() {
+			$(this).css('min-height', $(window).height());
+		});
 	};
 
 	this.slider = function() {
@@ -30,14 +37,52 @@ var F = function() {
 	};
 
 	this.nav = function() {
-		var $panels = $('section.panel');
+		var _this = this;
+		var $headerheight = $('header').height();
+		var $navheight    = $('nav').outerHeight();
+		var $scrollLast = 0;
+		var $scrollTop, $position;
+		$(window).resize(function() {
+			$headerheight = $('header').height();
+			$navheight = $('nav').outerHeight();
+			_this.sections();
+		});
+		$(window).scroll(function () {
+			$scrollTop = $(this).scrollTop();
+			$position = $scrollTop / $headerheight;
+			if($scrollTop < $headerheight) {
+				$('header hgroup').css('opacity', 1 - ( ( $position ) * 1 ))
+				.css('top', '-' + ( ( $position * 100 ) ) + '%' );
+			} else {
+				$('header hgroup').css({ 'opacity': 1, 'top': 0});
+			}
+			if ( $scrollTop > ( $headerheight ) ) {
+				$('nav').addClass('fixed');
+				if( $scrollTop > ($headerheight + $navheight) ) {
+					if(Math.abs($scrollTop - $scrollLast) > 20) {
+						if($scrollTop > $scrollLast) {
+							// down
+							$('nav').removeClass('show');
+						} else {
+							// up
+							$('nav').addClass('show');
+						}
+						$scrollLast = $scrollTop;
+					}
+				}
+			} else if ( $scrollTop < $headerheight ) {
+				$('nav').removeClass('fixed');
+				$('nav').removeClass('show');
+			}
+		});
 		var $nav = $('nav a');
 		$('nav a, .jump').click(function(e) {
 			var $this = $(this);
 			$nav.removeClass('active');
-			$panels.addClass('hidden');
 			$this.addClass('active');
-			$('#' + $this.attr('rel')).removeClass('hidden');
+			$('html, body').animate({scrollTop: $("#" + $this.attr('rel')).offset().top}, { duration: 2000, complete: function() {
+				$('nav').addClass('show');
+			} });
 			e.preventDefault();
 		});
 	};

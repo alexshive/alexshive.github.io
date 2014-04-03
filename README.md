@@ -1,4 +1,4 @@
-home
+Alex Shive
 ====
 
-Site contents for alexshive.com
+Source code for my portfolio: alexshive.com
