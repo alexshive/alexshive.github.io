@@ -3,7 +3,7 @@
 		height: 100%;
 	}
 	body {
-		background: #000 url('../img/cover.jpg') no-repeat center;
+		background: #000 url('#{$base-host}/img/cover.jpg') no-repeat center;
 		background-attachment: fixed;
 		background-size: cover;
 	}	
@@ -125,7 +125,7 @@
 			}	
 		}
 		section.jennapp {
-			background: #000 url('../img/portfolio/jennapp.jpg') no-repeat center;
+			background: #000 url('#{$base-host}/img/portfolio/jennapp.jpg') no-repeat center;
 			background-size: cover;
 			background-position: fixed;
 			p.buttons a {
@@ -133,7 +133,7 @@
 			}
 		}
 		section.featured {
-			background: #000 url('../img/portfolio/featured.jpg') no-repeat center;
+			background: #000 url('#{$base-host}/img/portfolio/featured.jpg') no-repeat center;
 			background-size: cover;
 			background-position: fixed;
 		}

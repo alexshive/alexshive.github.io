@@ -12,7 +12,7 @@
 		padding: 10px 20px;
 	}
 	section.jennapp {
-		background: #000 url('../img/portfolio/jennapp-mobile.jpg') no-repeat center;
+		background: #000 url('#{$base-host}/img/portfolio/jennapp-mobile.jpg') no-repeat center;
 		background-size: cover;
 		background-position: fixed;
 		p.buttons {
@@ -20,7 +20,7 @@
 		}
 	}
 	section.featured {
-		background: #000 url('../img/portfolio/featured-mobile.jpg') no-repeat center;
+		background: #000 url('#{$base-host}/img/portfolio/featured-mobile.jpg') no-repeat center;
 		background-size: cover;
 		background-position: fixed;
 	}
