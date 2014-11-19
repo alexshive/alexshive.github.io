@@ -7,6 +7,7 @@
 	}
 	.bg {
 		@include linear-gradient($blue-1-color, $blue-2-color);
+		@include opacity(.8);
 	}
 	.hide,
 	.hidden {
@@ -21,7 +22,8 @@
 		z-index: 0;
 		position: fixed;
 		height: 100%;
-		background: transparent;		
+		background: url(../img/cover.jpg) no-repeat;
+		background-size: cover;		
 		hgroup {
 			position: absolute;
 			top: 0;
@@ -94,7 +96,7 @@
 		}
 		.social {
 			float: right;
-			margin: 2em 0;
+			margin: 1em 0;
 			a {
 				display: inline-block;
 				vertical-align: top;
@@ -102,6 +104,8 @@
 				*display: inline;
 				padding-left: 10px;
 				em {
+					position: relative;
+					top: 3px;
 					@include rem(15);
 				}
 			}
