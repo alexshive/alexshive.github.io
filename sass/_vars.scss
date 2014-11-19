@@ -1,13 +1,17 @@
 
 // $base-host: "http://localhost/alexshive";
 // $base-host: "http://d3v5jb74cvjqkf.cloudfront.net";
-$base-host: "http://assets.alexshive.com";
+// $base-host: "http://assets.alexshive.com";
 
 $body-bg-color: #f1f1f1;
 
+$blue-1-color: #3081d1;
+$blue-2-color: #1e568d;
+
 $font-color: darken($body-bg-color, 60%);
+$nav-hover-bg-color: lighten($blue-2-color, 80%);
 $nav-link-color: darken($body-bg-color, 20%);
-$nav-link-hover: lighten($nav-link-color, 20%);
+$nav-link-hover: lighten($blue-2-color, 20%);
 
 $link-color: #349ADF;
 $link-hover: $link-color;
@@ -23,7 +27,7 @@ $padding: 25px;
 BASE SIZE
 *********************/
 
-$base-font-size: 18;
+$base-font-size: 16;
 
 /*********************
 TYPOGRAPHY
@@ -45,7 +49,7 @@ $nav-font-family: $sans-serif;
 $h1-font-size: $base-font-size * 3;
 $h1-font-family: $sans-serif;
 
-$h2-font-size: $base-font-size * 1;
+$h2-font-size: $base-font-size * 1.4;
 $h2-font-family: sans-serif;
 
 $h3-font-size: $base-font-size * 1.5;

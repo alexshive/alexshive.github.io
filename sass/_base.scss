@@ -111,9 +111,6 @@ blockquote {
 	line-height: $line-height;
 }
 
-header, footer {
-	background: #000;
-}
 header {
 	hgroup {
 		position: relative;
@@ -153,7 +150,7 @@ nav {
 				margin: 0;				
 				&:hover {
 					color: $nav-link-hover;
-					background: #000;
+					background: $nav-hover-bg-color;
 				}
 				&.active {
 					background: $body-bg-color;
@@ -218,17 +215,20 @@ textarea {
     height: 250px;
 }
 
-.cover {
+.cover, .bg {
 	position: absolute;
 	top: 0;
 	left: 0;
 	bottom: 0;
 	right: 0;
-	background: #000;
-	@include opacity(.5);
 	width: 100%;
 	height: 100%;
 	z-index: 1;
+}
+
+.cover {
+	background: #000;
+	@include opacity(.5);
 }
 
 main {
@@ -248,13 +248,13 @@ main {
 		@include row;
 		position: relative;
 		z-index: 2;
+		padding-bottom: 20px;
 	}
 	section {
 		clear: both;
 		position: relative;
 		padding: 0px 25px;
-		&.featured,
-		&.jennapp {
+		&.featured {
 			color: #FFF;
 			div.panel {
 				position: absolute;
@@ -326,11 +326,10 @@ main {
 
 footer {
 	position: relative;
-	height: 45px;
+	height: 88px;
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	z-index: 100;
 	p {
 		float: left;
 		width: 100%;

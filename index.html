@@ -10,7 +10,7 @@
     
     <title>Alex Shive</title>
 
-    <link rel="stylesheet" href="http://assets.alexshive.com/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
 </head>
 <body>
@@ -18,14 +18,14 @@
 	<header>
 		<hgroup>
 			<h1>Hello, my name is <strong>Alex Shive</strong></h1>
-			<h2>I'm a front-end developer, backend programmer, and graphic designer.</h2>
+			<h2>Front End Developer. Backend Programer. Graphic Designer.</h2>
 		</hgroup>		
-		<div class="cover"></div>
+		<div class="bg"></div>
 	</header>
 
 	<nav>
 		<ul>
-			<li><a href="#" rel="about" class="active">About Myself</a></li>
+			<li><a href="#" rel="about">About Me</a></li>
 			<li><a href="#" rel="portfolio">My portfolio</a></li>
 			<li><a href="#" rel="contact">Contact me</a></li>
 		</ul>
@@ -38,8 +38,8 @@
 		<!-- About -->
 		<section id="about">
 			<div class="wrapper">
-				<h3>About Myself</h3>
-				<p>I'm a bay area resident, a recent graduate from Cal State East Bay, and a forward thinker. I've currently accumilated over 12 years of experience as a front end developer, graphic designer, and engineer. I've enjoyed every moment of it and waking up to new possibilities. I enjoy a challenge and am always up to the task of problem solving as the web evolves. I strive to learn new web technology as it continuously evolves. </p>
+				<h3>About Me</h3>
+				<p>I'm a bay area resident, a graduate from Cal State East Bay, and a forward thinker. I've currently accumilated over 12 years of experience as a front end developer, graphic designer, and engineer. I've enjoyed every moment of it and waking up to new possibilities. I enjoy a challenge and am always up to the task of problem solving as the web evolves. I strive to learn new web technology as it continuously evolves. </p>
 				<h3>What can I do for you:</h3>
 				<div class="skill">
 					<h4>Front end development</h4>
@@ -79,113 +79,105 @@
 
 
 		<!-- Portfolio -->
-		<section id="portfolio" class="featured">
-			<div class="panel">
-				<div class="wrapper">
-					<h3>Latest Project: Photo Gallery API</h3>
-
-					<p>The photo gallery for JustJennette.com has received more traffic than the main domain. There was a need to preserve CPU usage and optimize for mobile. The backend is programmed with Coppermine, a PHP based script for photo galleries. However, there was no JSON API available. </p>
-
-					<p>I created a plugin called <a href="https://github.com/alexshive/JSONFeed">JSONFeed</a>. This displayed albums and photos in a useable format for <em>jQuery</em>. With the help of <em>Amazon CloudFront's</em> servers, I was also able to cache the JSON feed. This helped two ways: receive the API faster and use less server resources.</p>
-
-					<p><a href="http://photos.justjennette.com" target="_blank">View JustJennette Gallery</a></p>
-				</div>
-				<div class="cover"></div>
-			</div>
-		</section>
-		<section class="jennapp">
-			<div class="panel">
-				<div class="wrapper">
-					<h3>Jennapp: Celebrity based app for iPhone and Android</h3>
-
-					<p>Since the release of JustJennette.com, there was a need for fans to stay current with Nickelodeon actress Jennette McCurdy from anywhere and receive notifications. </p>
-
-					<p>The mobile app released for iPhone and Android were built with Titanium SDK, a foundation to make code management easy and fast. Fans helped decide the name Jennapp, a clever use of the combination of Jennette and the word app. Jennapp features regularly updated news, photos, videos, sticker editing, and more. Notifications are also sent instantly to the fan with updated information. </p>
-
-					<p>Jennapp is available to download now for <em>free</em>.</p>
-
-					<p class="buttons"><a href="https://itunes.apple.com/us/app/jennapp/id536911466?mt=8" target="_blank" class="img"><img src="http://assets.alexshive.com/img/store-iphone.png"></a><a href="https://play.google.com/store/apps/details?id=com.justjennette.app" target="_blank" class="img"><img src="http://assets.alexshive.com/img/store-android.png" /></a></p>
-				</div>
-				<div class="cover"></div>
-			</div>
-		</section>
 		<section>
 			<div class="wrapper">
-				<h3>Additional projects</h3>
+					<div id="portfolio"></div>
 					<div id="projects">
 						<ul>
+
 							<li class="project">
+								<div class="screenshots">
+									<div class="slider">
+										<ul>
+											<li><img src="/work/myFICO-desktop.jpg" /></li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="details">
+									<h4>MyFICO</h4>
+
+									<p>Understanding and keeping track of credit score is vital for everybody. MyFICO offers many ways to stay current on their credit score across all three credit bureaus. However, the member site hasn't been updated for responsive devices and was often confusing to customers.</p>
+
+									<p>I was tasked to help redesign and connect the new interface with the backend API that was written in Java. The update took approximately 2-3 months to complete and has already made a huge positive impact which has brought up new registrations and overall kept existing customers coming back regularly. </p>
+
+									<p><a href="http://myfico.com" target="_blank">View myFICO.com</a></p>
+								</div>
+								
+								
+
+							</li>
+
+							<li class="project">
+
+								<div class="screenshots">
+									<div class="slider">
+										<ul>
+											<li><img src="/work/homestead-desktop.jpg" /></li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="details">
+									<h4>Homestead</h4>
+
+									<p>My role for Homestead consisted of working with the web developer team to manage the main homepage which was powered by Drupal. I would utilize Masonry Javascript framework and jQuery to provide a rich user experience. </p>
+
+									<p>I was also assigned to help with their self-building website tool. The service, Site Expresso, provided functionality to build a unique template which was dependent on the changes in layout, style, and color. This meant that consistency for the backend code was most important. I led the team in making scaling templates possible by providing the framework which used SASS to compile with Java. The changes needed to happen in real time to the user. This meant that all the combined CSS files had to be generated for each update. The use of SASS made this an easy task. </p>
+
+									<p><a href="http://homestead.com" target="_blank">View Homestead.com</a></p>
+								</div>
+								
+								
+
+							</li>
+
+							<li class="project">
+
+								<div class="screenshots">
+									<div class="slider">
+										<ul>
+											<li><img src="/work/Intuit-desktop.jpg" /></li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="details">
+									<h4>Intuit</h4>
+
+									<p>My primary role was developing prototypes for the Site Builder tool. However, there was a growing need for consistency for new and existing styles. To help simplify the process while avoiding recoding existing UI elements, I developed a pattern library for designers and programmers on the team to use. </p>
+
+									<p>The pattern library was built with Wordpress as the backend tool and custom pages which had one section for the designers to upload mockups and wireframes. The other section was code that programmers can easily copy and paste into their projects. This cut down on production time, helped ensure easy updates, and provided reliable quick access with effeciency.</p>
+
+									<p><a href="http://intuit.com" target="_blank">View Intuit.com</a></p>
+								</div>
+								
+								
+
+							</li>
+
+							<li class="project">
+								
+								
+								<div class="screenshots">
+									<div class="slider">
+										<ul>
+											<li><img src="/work/Jennapp-desktop.jpg" /></li>
+											<li><img src="/work/justjennette-desktop.jpg" /></li>
+										</ul>
+									</div>
+								</div>
+
 								<div class="details">
 									<h4>JustJennette</h4>
 
-									<p>JustJennette is a fansite dedicated to the Nickelodeon celebrity actress Jennette McCurdy. Since it's debut in June 2010, JustJennette has been the most successful personal project to date. Under the hood, the custom layout was built for the <em>Wordpress framework</em> and optimized for <em>responsive design</em> with the aim of designing for mobile first. It is also utilizing Grunt for minification of <em>object oriented Javascript/jQuery</em> and <em>SCSS compiling</em>. </p>
+									<p>JustJennette is a fansite dedicated to the Nickelodeon celebrity actress Jennette McCurdy. Since it's debut in June 2010, JustJennette has been the most successful personal project to date. Under the hood, the custom layout was built for the Wordpress framework and optimized for responsive design with the aim of designing for mobile first. It is also utilizing Grunt for minification of object oriented Javascript/jQuery and SCSS compiling. </p>
 
 									<p><a href="http://justjennette.com" target="_blank">View JustJennette.com</a></p>
 								</div>
-								
-								<div class="screenshots">
-									<div class="slider">
-										<ul>
-											<li><img src="http://assets.alexshive.com/work/justjennette-tablet.jpg" /></li>
-											<li><img src="http://assets.alexshive.com/work/justjennette-desktop.jpg" /></li>
-										</ul>
-									</div>
-								</div>
 
 							</li>
-							<li class="project">
-								<div class="details">
-									<h4>JennetteMcCurdy.com</h4>
 
-									<p>Concept web design along with a custom made logo. Utilizes full page sliding effects and transitions with <em>CSS3</em> and integration with a <em>custom JSON API</em> from JustJennette for news source. The backend is hosted with <a href="https://www.appfog.com/" target="_blank">AppFog</a> using terminal commands and Git repositories. </p>
-								</div>
-
-								<div class="screenshots">
-									<div class="slider">
-										<ul>
-											<li><img src="http://assets.alexshive.com/work/jennettemccurdy-desktop.jpg" /></li>
-										</ul>
-									</div>
-								</div>
-
-							</li>
-							<li class="project">
-								<div class="details">
-									<h4>WPGhost</h4>
-									<p><a href="http://tryghost.org" target="_blank">Ghost</a> has been widely spread as a solution to simple blogging, with Wordpress being viewed as a CMS (Content Management System). </p>
-
-									<p>During its early phase of being hidden from the public, I tried to re-create the front-end experience. Instead of using NodeJS for the backend, I recreated using Wordpress. It was a fun learning experience in Javascript navigation and helped me expand my knowledge of Markdown. </p>
-
-									<p><a href="https://github.com/alexshive/wpghost" target="_blank">View the WPGhost repository</a></p>
-								</div>
-								
-								<div class="screenshots">
-									<div class="slider">
-										<ul>
-											<li><img src="http://assets.alexshive.com/work/wpghost-desktop.jpg" /></li>
-										</ul>
-									</div>
-								</div>
-
-							</li>
-							<li class="project">
-								<div class="details">
-									<h4>EIG Pattern Library</h4>
-									<p>It's become standard practice for large companies to adapt a pattern library to avoid confusion between designers and developers. It helps simplify the process, avoid repeating styles, and prevent bad coding practices.</p>
-
-									<p><a href="http://www.eig-design.com/" target="_blank">View the EIG Pattern Library</a></p>
-								</div>
-
-								<div class="screenshots">
-									<div class="slider">
-										<ul>
-											<li><img src="http://assets.alexshive.com/work/EIG-desktop.jpg" /></li>
-											<li><img src="http://assets.alexshive.com/work/EIG-desktop-2.jpg" /></li>
-										</ul>
-									</div>
-								</div>
-
-							</li>
 
 						</ul>
 					</div>
@@ -195,7 +187,7 @@
 		
 		
 		<!-- Contact -->
-		<section id="contact">
+		<section>
 			<div class="wrapper">
 				<h3>Let's keep in touch</h3>
 				<div class="social">
@@ -226,9 +218,10 @@
 	<footer>
 		<p>&copy; 2001 - 2014</p>
 	</footer>
+	<div id="contact"></div>
 </div>
 
-<script src="http://assets.alexshive.com/js/build/alexshive.min.js"></script>
+<script src="/js/build/alexshive.min.js"></script>
 
 </body>
 </html>

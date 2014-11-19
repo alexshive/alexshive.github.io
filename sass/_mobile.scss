@@ -12,15 +12,15 @@
 		padding: 10px 20px;
 	}
 	section.jennapp {
-		background: #000 url('#{$base-host}/img/portfolio/jennapp-mobile.jpg') no-repeat center;
+		background: #000 url('/img/portfolio/jennapp-mobile.jpg') no-repeat center;
 		background-size: cover;
 		background-position: fixed;
 		p.buttons {
 			text-align: center;
 		}
 	}
-	section.featured {
-		background: #000 url('#{$base-host}/img/portfolio/featured-mobile.jpg') no-repeat center;
+	section.galleryapi {
+		background: #000 url('/img/portfolio/galleryapi-mobile.jpg') no-repeat center;
 		background-size: cover;
 		background-position: fixed;
 	}
