@@ -7,25 +7,26 @@ var F = function() {
 
 	this.init = function() {
 		// this.sections();
+		this.intro();
 		this.nav();
 		this.email();
-		this.slider();
+		// this.slider();
 	};
 
-	this.sections = function() {
-		$('main section').each(function() {
-			var $wrapper = $(this).find('.wrapper');
-			var $sectionHeight = $(window).height();
-			var $wrapperHeight = 0;
-			if($wrapper) {
-				$wrapperHeight = $wrapper.height();
-				if($wrapperHeight > $sectionHeight) {
-					$sectionHeight = $wrapperHeight;
-				}
-			}
-			$(this).css('min-height', $sectionHeight);
-		});
-	};
+	// this.sections = function() {
+	// 	$('main section').each(function() {
+	// 		var $wrapper = $(this).find('.wrapper');
+	// 		var $sectionHeight = $(window).height();
+	// 		var $wrapperHeight = 0;
+	// 		if($wrapper) {
+	// 			$wrapperHeight = $wrapper.height();
+	// 			if($wrapperHeight > $sectionHeight) {
+	// 				$sectionHeight = $wrapperHeight;
+	// 			}
+	// 		}
+	// 		$(this).css('min-height', $sectionHeight);
+	// 	});
+	// };
 
 	this.slider = function() {
 		var duration = 3; // seconds
@@ -45,12 +46,29 @@ var F = function() {
 		});
 	};
 
+	this.intro = function() {
+		$('header hgroup').fadeIn('slow', function() {
+			$('.bg').css('opacity', '1');
+		});
+	}
+
 	this.nav = function() {
+
 		var _this = this;
-		var $headerheight = $('header').height();
-		var $navheight    = $('nav').outerHeight();
-		var $scrollLast = 0;
-		var $scrollTop, $position;
+
+		var $scrollTop, $position = $('main').offset().top;
+
+		$(window).scroll(function () {
+			$scrollTop = $(this).scrollTop();
+			var opacity = ($scrollTop / $position);
+			if(opacity > 1) opacity = 1;
+			$('.blur').css('opacity', opacity * 1.5);
+			if(opacity >= 1) {
+				$('nav').fadeIn();
+			} else {
+				$('nav').fadeOut('fast');
+			}
+		});
 		// $(window).resize(function() {
 		// 	$headerheight = $('header').height();
 		// 	$navheight = $('nav').outerHeight();
@@ -85,7 +103,7 @@ var F = function() {
 		// 	}
 		// });
 		var $nav = $('nav a');
-		$('nav a, .jump').click(function(e) {
+		$('nav a, .jump, hgroup ul li a').click(function(e) {
 			var $this = $(this);
 			$nav.removeClass('active');
 			$this.addClass('active');

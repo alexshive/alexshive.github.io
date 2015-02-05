@@ -9,11 +9,11 @@ $blue-1-color: #3081d1;
 $blue-2-color: #1e568d;
 
 $font-color: darken($body-bg-color, 60%);
-$nav-hover-bg-color: lighten($blue-2-color, 80%);
+$nav-hover-bg-color: lighten($body-bg-color, 80%);
 $nav-link-color: darken($body-bg-color, 20%);
 $nav-link-hover: lighten($blue-2-color, 20%);
 
-$link-color: #349ADF;
+$link-color: #333;
 $link-hover: $link-color;
 
 $header-gradient-top: #414141;

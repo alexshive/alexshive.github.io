@@ -113,28 +113,42 @@ blockquote {
 
 header {
 	hgroup {
-		position: relative;
-		@include row;
-		text-align: center;
+		ul li {
+			list-style: none;
+			display: block;
+			a {
+				position: relative;
+				z-index: 2;
+				display: block;
+				padding: 10px;
+				text-align: center;
+				border: 1px solid rgba(0,0,0,.5);
+				width: 50%;
+				margin: 0 auto 5px auto;
+				&:hover {
+					background: rgba(0,0,0,.8);
+					color: #fff;
+				}
+			}
+		}
 	}
 	h1, h2, h3 {
 		text-align: center;
 		margin: 0px;
 		padding: 20px 20px 10px;
-		color: $header-color;
 	}
 	h1 {
 		margin-top: 0;
-	}
-	
+	}	
 }
 
 nav {
 	position: fixed;
-	bottom: 0;
-	display: block;
+	top: 0;
 	clear: both;
 	width: 100%;
+	display: none;
+	box-shadow: 0 3px 25px rgba(0,0,0,.2);
 	ul {
 		@include no-padding;
 		li {
@@ -142,19 +156,18 @@ nav {
 			@include col(4);
 			@include no-padding;
 			a {
+				background: rgba(241,241,241,.95);
 				display: block;
-				background: rgba(#000, .9);
-				color: $nav-link-color;
+				color: #000;
 				text-align: center;
-				padding: 5px 0;
-				margin: 0;				
+				padding: 25px 0;
+				margin: 0;
+				@include rem(19);
 				&:hover {
-					color: $nav-link-hover;
 					background: $nav-hover-bg-color;
 				}
 				&.active {
 					background: $body-bg-color;
-					color: #000;
 					display: block;
 				}
 			}
