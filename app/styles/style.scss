@@ -6,7 +6,27 @@
 @import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
 @import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/scaffolding";
 @import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/grid";
+@import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/buttons";
+
+// @import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 
 @import "../bower_components/spinners/stylesheets/spinners";
 
+@import "vars";
+@import "mixins";
+@import "media-queries";
+@import "genericon";
+@import "base";
+
+// SOURCE: https://dribbble.com/shots/1916837-CSS-Waves-Animation
+// @import "waves"; 
+// IDEAS: cloud = API, waves = front end, deep end = backend
+
+// @import "desktop";
+@import "mobile";
+
+@import "header";
+@import "skills";
 @import "main";
+
+@import "print";

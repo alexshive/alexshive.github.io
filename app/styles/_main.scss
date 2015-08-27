@@ -1,13 +1,40 @@
-@import "vars";
-@import "mixins";
-@import "media-queries";
-@import "genericon";
-@import "base";
-
-// SOURCE: https://dribbble.com/shots/1916837-CSS-Waves-Animation
-// @import "waves"; 
-// IDEAS: cloud = API, waves = front end, deep end = backend
-
-@import "desktop";
-@import "mobile";
-@import "print";
+.overlay {
+	background: url('/images/laptop.jpg') no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	@include opacity(.3);
+}
+main {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	.intro, .skills {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		min-height: 100%;
+		min-width: 100%;
+	}
+	.intro {
+		.container {
+			position: absolute;
+			display: block;
+			bottom: 10%;
+			left: 0;
+			right: 0;
+			.btn .genericon {
+				font-size: 32px;
+				vertical-align: middle;
+			}
+		}
+	}
+}

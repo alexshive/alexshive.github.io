@@ -1,0 +1,19 @@
+.navbar {
+	display: none;
+	.navbar-header {
+		position: absolute;
+		display: none;
+		.genericon {
+			font-size: 32px;
+		}
+	}
+	ul.nav {
+		padding: 0;
+		li {
+			display: inline-block;
+			list-style: none;
+			text-align: center;
+			@extend .col-sm-4;
+		}
+	}
+}

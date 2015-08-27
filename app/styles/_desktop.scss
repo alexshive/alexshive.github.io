@@ -2,10 +2,6 @@
 	html, body, .spacer {
 		height: 100%;
 	}
-	body {
-		background: #fff;
-		// background: $blue-1-color;
-	}
 	.hide,
 	.hidden {
 		display: block;
@@ -17,7 +13,6 @@
 	}
 	
 	main {
-		background: $body-bg-color;
 		position: relative;
 		z-index: 1;
 		display: block;

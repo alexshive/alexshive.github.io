@@ -5,6 +5,8 @@ html, body {
 	font-family: $body-font-family;
 	font-size: $base-font-size + px;
 	font-weight: $body-font-weight;
+	min-height: 100%;
+	height: 100%;
 }
 
 /*********************
@@ -63,7 +65,7 @@ h1 {
 	letter-spacing: -1px;
 	@include rem($h1-font-size);
 	line-height: 1;
-	padding: 0px $padding/2;
+	padding: 0px;
 	text-align: left;
 }
 
@@ -88,122 +90,5 @@ h4 {
 p,
 blockquote {
 	line-height: $line-height;
-}
-
-header {
-	hgroup {
-		ul li {
-			list-style: none;
-			display: block;
-			a {
-				position: relative;
-				z-index: 2;
-				display: block;
-				padding: 10px;
-				text-align: center;
-				border: 1px solid rgba(0,0,0,.5);
-				width: 50%;
-				margin: 0 auto 5px auto;
-				&:hover {
-					background: rgba(0,0,0,.8);
-					color: #fff;
-				}
-			}
-		}
-	}
-	h1, h2, h3 {
-		text-align: center;
-		margin: 0px;
-		padding: 20px 20px 10px;
-	}
-	h1 {
-		margin-top: 0;
-	}	
-}
-
-nav {
-	position: fixed;
-	top: 0;
-	clear: both;
-	width: 100%;
-	display: none;
-	box-shadow: 0 3px 25px rgba(0,0,0,.2);
-	ul {
-		@include no-padding;
-		li {
-			display: inline;
-			@include make-grid(4);
-			@include no-padding;
-			a {
-				background: rgba(241,241,241,.95);
-				display: block;
-				color: #000;
-				text-align: center;
-				padding: 25px 0;
-				margin: 0;
-				@include rem(19);
-				&:hover {
-					background: $nav-hover-bg-color;
-				}
-				&.active {
-					background: $body-bg-color;
-					display: block;
-				}
-			}
-		}
-	}
-}
-
-header, nav, hgroup {
-	width: 100%;
-	z-index: 3;
-	a, a:visited {
-		text-decoration: none;
-	}
-}
-
-hr {
-	@include clear;
-	@include make-row;
-	display: block;
-	height:1px;
-	background: #ccc;
-	border: 0;
-	margin: 20px auto;
-}
-
-.hide,
-.hidden {
-	display: none;
-}
-
-input[type=submit],
-{
-	@include border-radius(5px);
-	background: $btn-bg-color;
-	color: $btn-text-color;
-	font-weight: 200;
-	border: 1px solid transparent;
-	padding: 10px 15px;
-	@include rem(18);
-	@include transition(all .3s ease);
-	&:hover {
-		background: $btn-bg-hover;
-		color: $btn-text-hover;
-	}
-}
-
-input[type=text],
-textarea {
-	width: 100%;
-	@include clear;
-    border: 1px solid #ccc;
-    @include rem(18);
-    padding: 3px;
-    outline: none;
-}
-
-textarea {
-    height: 250px;
 }
 
