@@ -1,0 +1,150 @@
+@include respond-to(tablet-desktop) {
+	html, body, .spacer {
+		height: 100%;
+	}
+	body {
+		background: #fff;
+		// background: $blue-1-color;
+	}
+	.hide,
+	.hidden {
+		display: block;
+		position: absolute;
+		height: 0;
+		overflow: hidden;
+		@include opacity(0);
+		left: -100%;
+	}
+	
+	main {
+		background: $body-bg-color;
+		position: relative;
+		z-index: 1;
+		display: block;
+		padding-top: 25px;
+		padding-bottom: 60px;
+		max-width: none;	
+		top: 150px;
+		div.skill {
+			@include make-grid(4);
+		}
+		#about {
+			.bio {
+				position: absolute;
+				left: 0;
+				margin-left: 300px;
+			}
+			.skills, img {
+				float: left;
+			}
+			.skills {
+				padding-top: 35px;
+				h3 {
+					text-align: center;
+					margin-bottom: 30px;
+				}
+			}
+			.skill {
+				h4 {
+					position: relative;
+					padding-left: 130px;
+					width: 250px;
+					margin-top: 18px;
+				}
+				span {
+					position: absolute;
+					background: url('/img/icons.png') no-repeat;
+					width: 90px;
+					height: 90px;
+					margin-left: 20px;
+					&.browser {
+						background-position: -112px -598px;
+					}
+					&.code {
+						background-position: -898px -598px;
+					}
+					&.analytics {
+						background-position: 0px -956px;
+					}
+				}
+			}
+			img {
+				@include border-radius(50%);
+			}
+			ul {
+				clear: both;
+				padding: 20px;
+				li {
+					margin-top: 8px;
+					list-style: none;
+					background: url('/img/check.png') no-repeat top left;
+					padding-left: 40px;
+					min-height: 32px;
+					padding-top: 5px;
+				}
+			}
+		}
+		#contact {
+			h3 {
+				float: left;
+			}
+			label {
+				clear: both;
+			}			
+		}
+		.social {
+			float: right;
+			margin: 1em 0;
+			a {
+				display: inline-block;
+				vertical-align: top;
+				zoom: 1;
+				*display: inline;
+				padding-left: 10px;
+				em {
+					position: relative;
+					top: 3px;
+					@include rem(15);
+				}
+			}
+		}
+		section {
+			padding: 0;
+			padding-top: 60px;
+			width: 100%;
+		}
+		#projects ul li.project {
+			float: left;
+			width: 100%;
+			clear: both;
+			padding: 100px 0;
+			.details {
+				@include make-grid(5);
+			}
+			.screenshots {
+				@include make-grid(7);
+				ul {				
+					float: left;
+					height: 550px;
+					width: 100%;
+					li {
+						position: relative;
+						img {
+							position: absolute;
+							display: block;
+							float: left;
+							left: 0;
+							top: 0;
+							@include transition(all 1s ease);
+						}
+						&.active {
+							img {
+								@include opacity(1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
