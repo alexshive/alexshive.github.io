@@ -435,6 +435,14 @@ module.exports = function (grunt) {
       ]
     },
 
+    // Test settings
+    karma: {
+      unit: {
+        configFile: 'test/karma.conf.js',
+        singleRun: true
+      }
+    }
+
   });
 
 
@@ -465,7 +473,9 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
+    'ngtemplates',
     'concat',
+    'ngAnnotate',
     'copy:dist',
     'bake',
     'cdnify',
@@ -475,6 +485,8 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
+    'newer:jshint',
+    'test',
     'build'
   ]);
 };
