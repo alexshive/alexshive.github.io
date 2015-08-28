@@ -2,3 +2,5 @@ node_modules/
 .sass-cache/
 .tmp/
 bower_components/
+dist/
+app/index.html

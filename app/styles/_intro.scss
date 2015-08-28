@@ -22,6 +22,8 @@
 	}
 	ul {
 		padding: 0 15px;
+		margin: 20px auto;
+		width: 75%;
 		li {
 			list-style: none;
 			display: block;
@@ -37,7 +39,10 @@
 			li {
 				display: inline-block;
 				a {
-					padding: 8px 15px;
+					display: block;
+					padding: 10px 0;
+					margin: 0 20px;
+					@include rem(20);
 					@include border-radius(10px);
 					border: 1px solid #fff;
 					&:hover {

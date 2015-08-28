@@ -43,6 +43,22 @@ main {
 
 }
 
+@include respond-to(tablet) {
+	main {
+		.contact {
+			li {
+				text-align: center;
+				i {
+					@include rem(48);
+				}
+			}
+			span {
+				display: none;
+			}
+		}
+	}
+}
+
 @include respond-to(mobile-tablet) {
 	main {
 		.intro .start {

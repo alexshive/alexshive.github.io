@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<!-- build:css(.tmp) styles/style.css -->
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" href="styles/style.css">
 	<!-- endbuild -->
   </head>
@@ -21,10 +22,10 @@
 				<h3>Based in San Francisco, California</h3>
 				<div class="launch">
 					<ul>
-						<li><a href="#about">About Me</a></li>
-						<li><a href="#work">Work Experience</a></li>
-						<li><a href="#resume">Resume</a></li>
-						<li><a href="#contact">Contact</a></li>
+						<li class="col-sm-3"><a href="#about"><i class="fa fa-male"></i> About</a></li>
+						<li class="col-sm-3"><a href="#work"><i class="fa fa-briefcase"></i> Clients</a></li>
+						<li class="col-sm-3"><a href="#resume"><i class="fa fa-file-text"></i> Resume</a></li>
+						<li class="col-sm-3"><a href="#contact"><i class="fa fa-phone"></i> Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -36,8 +37,8 @@
 			<nav class="nav nav-tabs">
 				<strong><a href="#home">Alex Shive</a></strong>
 				<ul>
-					<li><a href="#about">About Me</a></li>
-					<li><a href="#work">Work Experience</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#work">Clients</a></li>
 					<li><a href="#resume">Resume</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
@@ -268,15 +269,12 @@
 			<h2>Let's get in touch</h2>
 		
 			<div class="container">
-				<div class="col-sm-4">
 					<h4>Connect</h4>
-					<ul>
-						<li><a href="#" id="email"><em></em></a></li>
-						<li><a href="http://www.linkedin.com/in/alexshive/" target="_blank">LinkedIn</a></li>
-						<li><a href="https://github.com/alexshive" target="_blank">Github</a></li>
+					<ul class="row">
+						<li class="col-sm-4"><a href="#" id="email"><i class="fa fa-envelope"></i> <span><em></em></span></a></li>
+						<li class="col-sm-4"><a href="http://www.linkedin.com/in/alexshive/" target="_blank"><i class="fa fa-linkedin"></i> <span>linkedin.com/in/alexshive</span></a></li>
+						<li class="col-sm-4"><a href="https://github.com/alexshive" target="_blank"><i class="fa fa-github"></i> <span>github.com/alexshive</span></a></li>
 					</ul>
-				</div>
-				<div class="col-sm-8">
 					<form method="POST" action="">
 							<label for="contact-name">Your Name</label>
 							<input type="text" id="contact-name" name="contact[name]" value="" required />
@@ -293,11 +291,9 @@
 							<div id="error">Uh oh! Something went wrong. Please contact directly via email <b></b></div>
 						</form>
 					</div>
+				<div class="copyright">&copy; 2015 Alex Shive.</div>
+				<div class="bg"></div>
 			</div>
-		
-			<div class="bg"></div>
-		
-			<div class="copyright">&copy; 2015 Alex Shive.</div>
 		</div>
 
 
