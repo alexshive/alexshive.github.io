@@ -52,9 +52,9 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer:server']
       },
-      bake: {
+      includes: {
         files: ['<%= yeoman.app %>/views/*.html'],
-        tasks: ['bake']
+        tasks: ['includes']
       },
       gruntfile: {
         files: ['Gruntfile.js']
