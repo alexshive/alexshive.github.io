@@ -29,3 +29,8 @@ nav {
 		}
 	}
 }
+@include respond-to(mobile-tablet) {
+	nav {
+		display: none;
+	}	
+}

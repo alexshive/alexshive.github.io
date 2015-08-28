@@ -42,3 +42,28 @@ main {
 	@import "contact";
 
 }
+
+@include respond-to(mobile-tablet) {
+	main {
+		.intro .start {
+			position: relative;
+			height: auto;
+			.launch {
+				display: none;
+			}
+		}
+		.home, .panel {
+			min-height: 0;
+			padding: 20px 0;
+		}
+		.bg {
+			display: none;
+		}
+		.about .me {
+			text-align: center;
+		}
+		.copyright {
+			position: relative;
+		}
+	}	
+}
