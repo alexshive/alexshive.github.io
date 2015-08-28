@@ -15,7 +15,7 @@ module.exports = function (grunt) {
   // Automatically load required Grunt tasks
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin',
-    ngtemplates: 'grunt-angular-templates',
+    includes: 'grunt-includes',
     cdnify: 'grunt-google-cdn'
   });
 
@@ -54,7 +54,7 @@ module.exports = function (grunt) {
       },
       bake: {
         files: ['<%= yeoman.app %>/views/*.html'],
-        tasks: ['bake:server']
+        tasks: ['bake']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -71,17 +71,16 @@ module.exports = function (grunt) {
       }
     },
 
-    bake: {
-        server: {
-            files: {
-                "<%= yeoman.app %>/index.html": "<%= yeoman.app %>/views/index.html"
-            }
-        },
-        build: {
-            files: {
-                "<%= yeoman.dist %>/index.html": "<%= yeoman.app %>/views/index.html"
-            }
+    includes: {
+      files: {
+        src: ['<%= yeoman.app %>/views/index.html'], // Source files
+        dest: '<%= yeoman.app %>', // Destination directory
+        flatten: true,
+        cwd: '.',
+        options: {
+          silent: true,
         }
+      }
     },
 
     // The actual grunt server settings
@@ -395,6 +394,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt,md}',
             '*.html',
+            'files/*.*',
             'images/**/*.*',
             'styles/fonts/{,*/}*.*',
             'CNAME',
@@ -456,7 +456,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'wiredep',
-      'bake:server',
+      'includes',
       'concurrent:server',
       'autoprefixer:server',
       'connect:livereload',
@@ -472,7 +472,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
-    'bake:build',
+    'includes',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
