@@ -4,16 +4,12 @@
 		background-image: url('/images/bg-about.jpg');
 	}
 	.me {
-		position: relative;
-		overflow: hidden;
-		width: 250px;
-		height: 250px;
-		@include border-radius(100%);
+		text-align: center;
 		img {
 			position: relative;
-			top: 0px;
-			left: 0;
-			width: 270px;
+			width: 100%;
+			max-width: 200px;
+			@include border-radius(100%);
 		}
 	}
 	.skills {
