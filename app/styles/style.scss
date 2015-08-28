@@ -8,9 +8,8 @@
 @import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/grid";
 @import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/buttons";
 
-// @import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
-
-@import "../bower_components/spinners/stylesheets/spinners";
+// $fa-font-path: "/bower_components/font-awesome/fonts/";
+@import "font-awesome/scss/font-awesome";
 
 @import "vars";
 @import "mixins";

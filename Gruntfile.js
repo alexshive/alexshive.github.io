@@ -89,7 +89,8 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
+        // hostname: 'localhost',
+        hostname: '127.0.0.1',
         livereload: 35729
       },
       livereload: {
@@ -241,7 +242,7 @@ module.exports = function (grunt) {
     filerev: {
       dist: {
         src: [
-          // '<%= yeoman.dist %>/scripts/{,*/}*.js',
+          '<%= yeoman.dist %>/scripts/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
           '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.dist %>/styles/fonts/*'
@@ -259,7 +260,7 @@ module.exports = function (grunt) {
         flow: {
           html: {
             steps: {
-              js: [],
+              js: ['concat', 'uglifyjs'],
               css: ['cssmin']
             },
             post: {}
@@ -395,7 +396,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
-            'images/{,*/}*.{webp}',
+            'images/**/*.*',
             'styles/fonts/{,*/}*.*'
           ]
         }, {
@@ -408,8 +409,8 @@ module.exports = function (grunt) {
           flatten: true,
           dot: false,
           cwd: '.',
-          src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
-          dest: '<%= yeoman.dist %>/fonts/bootstrap'
+          src: 'bower_components/font-awesome/fonts/*',
+          dest: '<%= yeoman.dist %>/fonts/'
         }]
       },
       styles: {
@@ -470,16 +471,15 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
+    'bake:build',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
-    'ngtemplates',
     'concat',
-    'ngAnnotate',
     'copy:dist',
-    'bake',
     'cdnify',
     'cssmin',
+    'uglify',
     'usemin',
     'htmlmin'
   ]);
