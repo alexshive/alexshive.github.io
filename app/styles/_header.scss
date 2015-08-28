@@ -4,11 +4,9 @@ nav {
 	width: 100%;
 	background: #000;
 	padding: 10px;
-	@include opacity(0);
+	z-index: 99;
 	&.show {
-		@include opacity(1);
 		position: fixed;
-		z-index: 99;
 	}
 	strong {
 		float: left;
@@ -23,7 +21,10 @@ nav {
 			display: inline-block;
 			a {
 				padding: 10px;
-				@include border-radius(10px);
+			}
+			&.active a {
+				background: #fff;
+				color: #000;
 			}
 		}
 	}
