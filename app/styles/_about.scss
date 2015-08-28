@@ -1,7 +1,7 @@
 .about {
 	.bg {
 		@include opacity(.2);
-		background-image: url('/images/bg.jpg');
+		background-image: url('/images/bg-about.jpg');
 	}
 	.me {
 		position: relative;
@@ -11,7 +11,7 @@
 		@include border-radius(100%);
 		img {
 			position: relative;
-			top: -10px;
+			top: 0px;
 			left: 0;
 			width: 270px;
 		}
@@ -19,5 +19,11 @@
 	.skills {
 		padding: 30px 0;
 		clear: both;
+		ul {
+			padding: 0px 20px;
+			li {
+				margin-bottom: 10px;
+			}
+		}
 	}
 }
