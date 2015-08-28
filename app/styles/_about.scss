@@ -1,0 +1,23 @@
+.about {
+	.bg {
+		@include opacity(.2);
+		background-image: url('/images/bg.jpg');
+	}
+	.me {
+		position: relative;
+		overflow: hidden;
+		width: 250px;
+		height: 250px;
+		@include border-radius(100%);
+		img {
+			position: relative;
+			top: -10px;
+			left: 0;
+			width: 270px;
+		}
+	}
+	.skills {
+		padding: 30px 0;
+		clear: both;
+	}
+}

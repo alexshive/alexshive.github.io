@@ -1,0 +1,34 @@
+.intro {
+	.start {
+		position: absolute;
+		z-index: 2;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 200px;
+		text-align: center;
+		h1 {
+			@include rem(72);
+		}
+		h2 {
+			@include rem(32);
+		}
+		h3 {
+			@include rem($base-font-size);
+			font-weight: 300;
+			@include opacity(.5);
+		}
+	}
+	ul {
+		padding: 0 15px;
+		li {
+			list-style: none;
+			display: block;
+			padding: 5px 0;
+		}
+	}
+	.bg {
+		background-image: url('/images/bg-sf.jpg');
+	}
+}

@@ -1,19 +1,30 @@
-.navbar {
-	display: none;
-	.navbar-header {
-		position: absolute;
-		display: none;
-		.genericon {
-			font-size: 32px;
-		}
+nav {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	background: #000;
+	padding: 10px;
+	@include opacity(0);
+	&.show {
+		@include opacity(1);
+		position: fixed;
+		z-index: 99;
 	}
-	ul.nav {
-		padding: 0;
+	strong {
+		float: left;
+		font-weight: 300;
+		font-size: 32px;
+		padding: 10px 20px;
+	}
+	ul {
+		float: right;
 		li {
-			display: inline-block;
 			list-style: none;
-			text-align: center;
-			@extend .col-sm-4;
+			display: inline-block;
+			a {
+				padding: 10px;
+				@include border-radius(10px);
+			}
 		}
 	}
 }

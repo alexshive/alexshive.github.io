@@ -1,7 +1,4 @@
-.overlay {
-	background: url('/images/bg-beauty.jpg') no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
+.bg {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -9,60 +6,37 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	@include opacity(.8);
+	@include opacity(.5);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 }
 main {
+
 	position: relative;
 	z-index: 2;
 	width: 100%;
 	height: 100%;
 	min-height: 100%;
-	.intro, .skills, .about {
-		position: absolute;
+
+	.panel {
+		position: relative;
 		height: 100%;
 		width: 100%;
-	}
-	.skills, .about {
-		padding-top: 100px;
 		background: #000;
-		background: rgba(0,0,0,.7);
-	}
-	.about {
-		.me {
+		clear: both;
+		padding: 50px 0;
+		h2 {
+			padding-bottom: 30px;
+		}
+		.container {
 			position: relative;
-			overflow: hidden;
-			width: 250px;
-			height: 250px;
-			@include border-radius(100%);
-			margin: 18% 0;
-			img {
-				position: relative;
-				top: -10px;
-				left: 0;
-				width: 270px;
-			}
+			z-index: 10;
 		}
-	}
-	.intro {
-		padding: 25px 0;
-		z-index: 99;
-		ul {
-			padding: 0 15px;
-			li {
-				list-style: none;
-				display: block;
-				padding: 5px 0;
-			}
-		}
-		.btn {
-			border: 1px solid #fff;
-			&:hover, &:active {
-				background: #fff;
-				background: rgba(255,255,255,.6);
-			}
-			&:link {
-				-webkit-tap-highlight-color: #fff;
-			}
-		}
-	}
+	}	
+
+	@import "intro";
+	@import "about";
+	@import "projects";
+
 }

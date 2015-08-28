@@ -1,37 +1,45 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Alex Shive</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.tmp) styles/style.css -->
-    <link rel="stylesheet" href="styles/style.css">
-    <!-- endbuild -->
+	<meta charset="utf-8">
+	<title>Alex Shive</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<!-- build:css(.tmp) styles/style.css -->
+	<link rel="stylesheet" href="styles/style.css">
+	<!-- endbuild -->
   </head>
-  <body ng-app="angularApp">
-  
-  <main>
-    <!--(bake header.html)-->
-    <div ng-view=""></div>
-  </main>
+  <body>
 
-  <div class="overlay"></div>
-  
-    <!-- build:js(.) scripts/vendor.js -->
+	<main>
+
+		<div class="intro panel">
+			<div class="start">
+				<h1>Alex Shive</h1>
+				<h2>Front-end Developer</h2>
+				<h3>Based in San Francisco, California</h3>
+			</div>
+			<div class="bg"></div>
+		</div>
+
+		<!--(bake header.html)-->
+		<!--(bake about.html)-->
+		<!--(bake projects.html)-->
+
+
+	</main>
+
+	<!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/about.js"></script>
-    <!-- endbuild -->
+  
+	<!-- build:js({.tmp,app}) scripts/scripts.js -->
+	<script src="scripts/app.js"></script>
+	<!-- endbuild -->
 
 </body>
 </html>
