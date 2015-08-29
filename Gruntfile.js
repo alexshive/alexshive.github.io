@@ -17,7 +17,7 @@ module.exports = function (grunt) {
     useminPrepare: 'grunt-usemin',
     includes: 'grunt-includes',
     shell: 'grunt-shell',
-    cdnify: 'grunt-google-cdn'
+    cdnify: 'grunt-cdnify'
   });
 
   // Configurable paths for the application
@@ -350,14 +350,14 @@ module.exports = function (grunt) {
     },
 
     cdnify: {
+      options: {
+        base: '//assets.alexshive.com/'
+      },
       dist: {
-        options: {
-          base: '//s3.amazonaws.com/alexshive/'
-        },
         files: [{
           expand: true,
-          cwd: '<%= yeoman.app %>',
-          src: '*.{css,html}',
+          cwd: '<%= yeoman.dist %>',
+          src: '**/*.{css,html}',
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -373,7 +373,7 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>',
           src: [
             '*.{ico,png,txt,md}',
-            '404.html',
+            '*.html',
             'files/*.*',
             'images/**/*.*',
             'styles/fonts/{,*/}*.*',
@@ -460,7 +460,6 @@ module.exports = function (grunt) {
     'clean:dist',
     'wiredep',
     'includes',
-    'cdnify',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
@@ -469,6 +468,7 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'usemin',
+    'cdnify',
     'htmlmin'
   ]);
 
