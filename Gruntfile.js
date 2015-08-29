@@ -16,6 +16,7 @@ module.exports = function (grunt) {
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin',
     includes: 'grunt-includes',
+    shell: 'grunt-shell',
     cdnify: 'grunt-google-cdn'
   });
 
@@ -350,36 +351,17 @@ module.exports = function (grunt) {
       }
     },
 
-    ngtemplates: {
-      dist: {
-        options: {
-          module: 'alexshivecomApp',
-          htmlmin: '<%= htmlmin.dist.options %>',
-          usemin: 'scripts/scripts.js'
-        },
-        cwd: '<%= yeoman.app %>',
-        src: 'views/{,*/}*.html',
-        dest: '.tmp/templateCache.js'
-      }
-    },
-
-    // ng-annotate tries to make the code safe for minification automatically
-    // by using the Angular long form for dependency injection.
-    ngAnnotate: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/concat/scripts',
-          src: '*.js',
-          dest: '.tmp/concat/scripts'
-        }]
-      }
-    },
-
-    // Replace Google CDN references
     cdnify: {
       dist: {
-        html: ['<%= yeoman.dist %>/*.html']
+        options: {
+          base: '//s3.amazonaws.com/alexshive/'
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>',
+          src: '*.{css,html}',
+          dest: '<%= yeoman.dist %>'
+        }]
       }
     },
 
@@ -393,7 +375,7 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>',
           src: [
             '*.{ico,png,txt,md}',
-            '*.html',
+            '404.html',
             'files/*.*',
             'images/**/*.*',
             'styles/fonts/{,*/}*.*',
@@ -437,6 +419,12 @@ module.exports = function (grunt) {
       ]
     },
 
+    shell: {
+      cp: {
+        command: "aws s3 cp --recursive dist/ s3://alexshive/"
+      }
+    },
+
     // Test settings
     karma: {
       unit: {
@@ -473,12 +461,12 @@ module.exports = function (grunt) {
     'clean:dist',
     'wiredep',
     'includes',
+    'cdnify',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
     'concat',
     'copy:dist',
-    'cdnify',
     'cssmin',
     'uglify',
     'usemin',
@@ -487,6 +475,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'newer:jshint',
-    'build'
+    'build',
+    'shell'
   ]);
 };
