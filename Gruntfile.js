@@ -355,14 +355,16 @@ module.exports = function (grunt) {
         html: {
           'img[ng-src]': 'ng-src',
           'img[data-echo]': 'data-echo',
-          'img[data-echo-background]': 'data-echo-background'
+          'div[data-echo-background]': 'data-echo-background',
+          'link[rel=stylesheet]': false, // don't cdnify css
+          'script[src]': false // don't cdnify scripts
         }
       },
       dist: {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: '**/*.{css,html}',
+          src: '**/*.html',
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -383,7 +385,7 @@ module.exports = function (grunt) {
             'images/**/*.*',
             'styles/fonts/{,*/}*.*',
             'CNAME',
-            'LICENSE'
+            '.htaccess'
           ]
         }, {
           expand: true,
