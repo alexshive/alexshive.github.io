@@ -1,0 +1,27 @@
+<IfModule mod_headers.c>
+# YEAR
+<FilesMatch ".(ico|gif|jpg|jpeg|png|flv|pdf)$">
+ Header set Cache-Control "max-age=29030400"
+</FilesMatch>
+# WEEK
+<FilesMatch ".(js|css|swf)$">
+ Header set Cache-Control "max-age=604800"
+</FilesMatch>
+# 24 HOURS
+<FilesMatch ".(html|htm|txt|php)$">
+ Header set Cache-Control "max-age=86400"
+</FilesMatch>
+</IfModule>
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/gif A29030400
+ExpiresByType image/png A29030400
+ExpiresByType image/jpeg A29030400
+ExpiresByType image/x-icon A29030400
+ExpiresByType application/pdf A29030400
+ExpiresByType application/x-javascript A604800
+ExpiresByType text/plain A86400
+ExpiresByType text/css A604800
+</IfModule>
+<ifmodule mod_deflate.c>
+AddOutputFilterByType DEFLATE image/gif image/png image/jpeg image/x-icon application/pdf application/javascript application/x-javascript text/plain text/html text/css text/x-component text/xml application/json </ifmodule>
