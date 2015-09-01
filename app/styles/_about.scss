@@ -1,7 +1,6 @@
 .about {
 	.bg {
 		@include opacity(.2);
-		background-image: url('/images/bg-about.jpg');
 	}
 	.me {
 		text-align: center;

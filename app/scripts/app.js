@@ -99,3 +99,4 @@ function contactForm() {
 
 contactForm();
 handleSmoothScrolling();
+echo.init();

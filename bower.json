@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "dependencies": {
     "bootstrap-sass-official": "^3.2.0",
+    "echojs": "~1.7.3",
     "font-awesome": "fontawesome#~4.4.0"
   },
   "devDependencies": {
-    "spinners": "~1.2.2",
-    "compass-mixins": "~1.0.2",
-    "angular-mocks": "^1.3.0"
+    "compass-mixins": "~1.0.2"
   },
   "appPath": "app",
   "moduleName": "alexshivecomApp",

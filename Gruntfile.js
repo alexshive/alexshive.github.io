@@ -351,7 +351,12 @@ module.exports = function (grunt) {
 
     cdnify: {
       options: {
-        base: '//assets.alexshive.com/'
+        base: '//assets.alexshive.com/',
+        html: {
+          'img[ng-src]': 'ng-src',
+          'img[data-echo]': 'data-echo',
+          'img[data-echo-background]': 'data-echo-background'
+        }
       },
       dist: {
         files: [{
