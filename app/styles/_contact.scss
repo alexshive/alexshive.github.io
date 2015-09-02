@@ -67,3 +67,11 @@
 	@include rem(14);
 	background: #000;
 }
+
+@include respond-to(mobile-tablet) {
+	input[type=submit] {
+		float: none;
+		width: 100%;
+		padding: 20px;
+	}
+}

@@ -1,5 +1,5 @@
 .about {
-	.bg {
+	.bg.loaded {
 		@include opacity(.2);
 	}
 	.me {

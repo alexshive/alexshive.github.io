@@ -1,0 +1,110 @@
+body.active {
+	overflow: hidden;
+	height: auto;
+	.menu-nav {
+		display: block;
+	}
+	.icon {
+		background-color: #292929;
+		&:before {
+			top: 0;
+			-webkit-transform: rotate(135deg);
+			-moz-transform: rotate(135deg);
+			-ms-transform: rotate(135deg);
+			-o-transform: rotate(135deg);
+			transform: rotate(135deg);
+		}
+		&:after {
+			top: 0;
+			-webkit-transform: rotate(225deg);
+			-moz-transform: rotate(225deg);
+			-ms-transform: rotate(225deg);
+			-o-transform: rotate(225deg);
+			transform: rotate(225deg);
+		}
+	}
+}
+
+.menu-nav {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+	padding: 40px;
+	background: #000;
+	ul {
+		padding: 0;
+		li {
+			list-style: none;
+			display: block;
+			padding: 20px 0;
+			@include rem(24);
+			i {
+				width: 30px;
+				text-align: center;
+				margin-right: 15px;
+			}
+		}
+	}
+}
+
+.menu {
+	display: none;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	right: 0;
+	width: 64px;
+	height: 64px;
+	background: #292929;
+	color: #fff;
+	.icon {
+		display: inline-block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		bottom: auto;
+		right: auto;
+		-webkit-transform: translateX(-50%) translateY(-50%);
+		-moz-transform: translateX(-50%) translateY(-50%);
+		-ms-transform: translateX(-50%) translateY(-50%);
+		-o-transform: translateX(-50%) translateY(-50%);
+		transform: translateX(-50%) translateY(-50%);
+		width: 16px;
+		height: 2px;
+		background-color: #ffffff;
+		-webkit-transition: background-color 0.3s;
+		-moz-transition: background-color 0.3s;
+		transition: background-color 0.3s;
+		&:before, &:after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background-color: #ffffff;
+			right: 0;
+			-webkit-transition: -webkit-transform .3s, top .3s, background-color 0s;
+			-moz-transition: -moz-transform .3s, top .3s, background-color 0s;
+			transition: transform .3s, top .3s, background-color 0s;
+		}
+		&:before {
+			top: 5px;
+		}
+		&:after {
+			bottom: 5px;
+		}
+	}
+}
+
+
+@include respond-to(mobile-tablet) {
+	body {
+		padding-top: 44px;
+	}
+	.menu {
+		display: block;
+	}
+}

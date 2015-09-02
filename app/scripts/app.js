@@ -1,16 +1,17 @@
+/*global echo*/
 'use strict';
 
 if(typeof $.fn.scrollspy !== 'undefined'){
-	$('body').scrollspy({ offset: 50 });
+	$('main').scrollspy({ offset: 50 });
 }
 $(window).scroll(function() {
-    var scroll = $(window).scrollTop();
-    var homeHeight = $('.home').outerHeight();
-    if(scroll >= homeHeight) {
-    	$('nav').addClass('show');
-    } else {
-    	$('nav').removeClass('show');
-    }
+	var scroll = $(window).scrollTop();
+	var homeHeight = $('.home').outerHeight();
+	if(scroll >= homeHeight) {
+		$('nav').addClass('show');
+	} else {
+		$('nav').removeClass('show');
+	}
 });
 
 function handleSmoothScrolling() {
@@ -51,52 +52,75 @@ function contactForm() {
 
 		if($(this).valid()) {
 
-		    $('#submit').hide();				
+			$('#submit').hide();				
 
 			var $name = 	$('#contact-name').val();
 			var $msg = 		$('#contact-message').val();
 			var $email = 	$('#contact-email').val();
 
 			var xhr = $.ajax({
-		      type: 'POST',
-		      url: "https://mandrillapp.com/api/1.0/messages/send.json",
-		      dataType: 'json',
-		      data: {
-		        key: $.base64.decode(k),
-		        message: {
-		          text: $msg,
-		          subject: "Contact Form",
-		          from_email: $email,
-		          from_name: $name,
-		          to: [{
-		                  "email": output,
-		                  "name": "Alex Shive"
-		              }]
-		        }
-		      }
-		    });
-		    
-		    xhr.done(function() {
-		    	$('#message').fadeIn();
-		    });
-		    
-		    xhr.fail(function(jqXHR, textStatus, errorThrown) {
-		    	$('#error').fadeIn();
-		    	if(textStatus) {
-		    		return true;
-		    	}
-		    	if(errorThrown) {
-		    		return false;
-		    	}
-		      	// console.log(jqXHR.responseText);
-		    });
+			  type: 'POST',
+			  url: "https://mandrillapp.com/api/1.0/messages/send.json",
+			  dataType: 'json',
+			  data: {
+				key: $.base64.decode(k),
+				message: {
+				  text: $msg,
+				  subject: "Contact Form",
+				  from_email: $email,
+				  from_name: $name,
+				  to: [{
+						  "email": output,
+						  "name": "Alex Shive"
+					  }]
+				}
+			  }
+			});
+			
+			xhr.done(function() {
+				$('#message').fadeIn();
+			});
+			
+			xhr.fail(function(jqXHR, textStatus, errorThrown) {
+				$('#error').fadeIn();
+				if(textStatus) {
+					return true;
+				}
+				if(errorThrown) {
+					return false;
+				}
+				// console.log(jqXHR.responseText);
+			});
 		}
 
-	    e.preventDefault();
+		e.preventDefault();
 
+	});
+}
+
+function menu() {
+	var $body = $('body');
+	var $menu = $('.menu');
+	$menu.on('click', function() {
+		$body.toggleClass('active');
+	});
+	$('.menu-nav li a').on('click', function() {
+		$body.removeClass('active');
 	});
 }
 
 contactForm();
 handleSmoothScrolling();
-echo.init();
+menu();
+echo.init({
+	offset: 100,
+	throttle: 250,
+	unload: false,
+	callback: function (element, op) {
+		if(op === 'load') {
+			element.classList.add('loaded');
+		} else {
+			element.classList.remove('loaded');
+		}
+	}
+});

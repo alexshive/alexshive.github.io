@@ -29,6 +29,9 @@ nav {
 		}
 	}
 }
+.about nav ul li {
+	width: auto;
+}
 @include respond-to(mobile-tablet) {
 	nav {
 		display: none;
